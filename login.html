@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="login.css" />
+  <title>Login e Registro do Usuario</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-in-form" id="sign-in-form">
+          <h2 class="title">Login</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Nome" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Senha" />
+          </div>
+          <input type="submit" value="Login" class="btn solid" />
+          <p class="social-text">Ou faça login em plataformas sociais</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </form>
+        <form action="#" class="sign-up-form" id="sign-up-form">
+          <h2 class="title">Cadastro</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Nome" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Senha" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="text" placeholder="CPF" />
+          </div>
+          <input type="submit" class="btn" value="Cadastrar" />
+          <p class="social-text">Ou fazer o Cadastro em plataformas sociais</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>Não tem conta?</h3>
+          <p>
+            Clique no botão abaixo para fazer o seu registro!
+          </p>
+          <button class="btn transparent" id="sign-up-btn">
+            Registro
+          </button>
+        </div>
+        <img src="login.svg" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>Ja tem uma Conta?</h3>
+          <p>
+            Então aperte o botão abaixo para fazer o login.
+          </p>
+          <button class="btn transparent" id="sign-in-btn">
+            Logar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
+    const sign_in_form = document.querySelector("#sign-in-form");
+    const sign_up_form = document.querySelector("#sign-up-form");
+
+    sign_up_btn.addEventListener("click", () => {
+      container.classList.add("sign-up-mode");
+    });
+
+    sign_in_btn.addEventListener("click", () => {
+      container.classList.remove("sign-up-mode");
+    });
+
+    sign_in_form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Impede o envio do formulário
+      window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
+    });
+
+    sign_up_form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Impede o envio do formulário
+      window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
+    });
+  </script>
+</body>
+
+</html>

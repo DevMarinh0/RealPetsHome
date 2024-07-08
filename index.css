@@ -1,0 +1,452 @@
+/* Importação ( Google Fonts) */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+/* RESET */
+* {
+    margin: 0;
+    border:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    
+}
+
+/* Layout */
+.container{
+    margin: 0 auto;
+   
+}
+
+/* Flex */
+.flex{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.flex2{
+    display: flex;
+    align-items: center;
+}
+.flex3{
+    display:flex;
+    flex-direction: column;
+}
+.flex4{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.flex5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Topo do site */
+#topo{
+    position: fixed;
+    right:7px;
+    bottom:1px;
+}
+#topo img{
+    width: 90px;
+    height: 90px;
+}
+
+
+/*Smartphone Portrait*/
+
+/* Cabeçalho */
+
+header{
+    height: 80px;
+    background-color: #f06e4f;
+    border-bottom: 2px solid #3693e3;
+}
+
+#logo img{
+    width: 75px;
+    height: 75px;
+    padding-right: 80px;
+    
+}
+#check{
+    display:none;
+    
+}
+
+nav label{
+    font-size: 3em;
+    padding-right: 15px;
+    color: #c0311d;
+}
+
+nav ul{
+    list-style:none;
+    background-color: red;
+    height: 150vh;
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    transition: all 0.5s;
+
+}
+
+#check:checked ~ ul{
+    right: 0;
+}
+
+nav ul li{
+    padding: 20px;
+    border-bottom: 1px solid white;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #d9e5f0;
+    font-weight: bolder;
+    
+}
+
+/* Destaque */
+#inicio{
+    height: 50vh;
+    padding: 50px 0px;
+    background-color: #e7e4e4;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  
+}
+#destaqProj{
+    display: none;
+    
+}
+#textProj{
+    color: #3693e3;
+    padding: 0px 15px;
+}
+#textProj h1{
+    margin-bottom: 15px;
+}
+#textProj h2{
+    margin-bottom: 15px;
+}
+
+/* Sobre */
+#sobre{
+    padding: 50px 10px;
+    background-color: #480000;
+    color:white;
+}
+#sobre h2{
+    margin-bottom: 10px;
+}
+#sobre p{
+    margin-bottom: 25px;
+}
+#video iframe{
+    width: 340px;
+    height: 191px;  
+    border: 0;
+}
+
+ /* Adoção  */
+
+ .Card{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#adocao{
+    background-color: #e7e4e4;
+}
+
+.cards{
+    background-color: white;
+    color: #3a3939;
+    border-radius: 15px;
+    width: 320px;
+    height: 400px;       
+    margin: 20px 20px;
+    
+}
+
+.image{
+    height: 200px;
+    margin-bottom: 20px;
+    background-size: cover;
+    border-radius: 15px 15px 0px 0px;
+}
+.image-dog{
+    background-image: url(assets/Rectangle\ 28.png);
+}
+.image-cat{
+    background-image: url(assets/image\ 3.png);
+}
+.cards p{
+    padding: 10px;
+}
+.cards h3{
+    margin-left: 120px;
+}
+ 
+
+/* Rodapé */
+address {
+    padding: 35px 10px 50px 10px;
+    font-style: normal;
+    background-color: #ebda40;
+    color: #3a3939;
+}
+address a{
+    text-decoration: none;
+    color: #3a3939;
+}
+address img{
+    padding-top: 15px;
+    margin-bottom: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+#IconLocal {
+    display: none;
+}
+#maps{
+    display: none;
+}
+#fone{
+    margin-top: 42px;
+}
+#social{
+    margin-bottom: 25px;
+}
+#social a{
+    margin-right: 10px;
+}
+footer{
+    padding: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #3a3939;
+    text-align: center;
+    color:white;
+}
+
+
+
+/*Smartphone LandScape*/
+@media (min-width: 576px){
+   
+    /* Layout */
+    .container{
+        max-width: 540px;
+    }
+    /* Sobre */
+    #video iframe{
+        width: 560px;
+        height: 315px;
+    }
+  
+    /* Rodapé */
+    .flex4 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    #social{
+        margin: 0;
+    }
+    
+}
+
+/*Tablet Portrait*/
+@media (min-width: 768px){
+  
+    /* Layout */
+    .container{
+        max-width: 720px;
+    }
+    /* Sobre */
+    #video iframe{
+        width: 560px;
+        height: 315px;
+    }
+    
+}
+
+/*Tablet LandScape*/
+@media (min-width: 992px){
+   
+    .container{
+        max-width: 960px;
+    }
+    /* Sobre */
+    #video iframe{
+        width: 560px;
+        height: 315px;
+    }
+    
+    
+}
+
+/*PC*/
+@media (min-width: 1200px){
+    
+    .container{
+        max-width: 1140px;
+    }
+
+    header{
+        height: 150px;
+        
+ 
+    }
+
+    #logo{
+        margin-left: 0px;
+    }
+
+    #logo img{
+        width: 145px;
+        height: 145px;
+        padding-right: 150px;
+        opacity:80%;
+    }
+
+    nav label{
+        display: none;
+    }
+
+    nav ul{
+        position: static;
+        height: auto;
+        background-color: transparent;
+        margin-top: 80px;
+    }
+
+    nav ul li{
+        float: left;
+        margin-right: 1em;
+        border: 0;
+        
+    }
+
+    nav ul li a {
+        color: #990000;
+        
+    }
+    nav ul li a:hover{
+        color: #facfb0;
+        font-size: 25px;
+        transition: all 0.4s;
+    }
+
+    /* Destaque */
+
+    #destaqProj{
+        display: inline;
+    }
+
+    #destaqProj img{
+        border-radius: 50%;
+        width: 290px;
+        height: 270px; 
+    }
+  
+
+    #textProj{
+        margin-left: 70px;
+    }
+
+    /* Sobre */
+  
+    #video iframe{
+        width: 560px;
+        height: 315px;
+    }
+    #textoSobre{
+        padding-left: 10px;
+    }
+    .flex3{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    
+    /* Adoção  */
+
+    .Card{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #adocao{
+        background-color: #e7e4e4;
+    }
+
+    .cards{
+        background-color: white;
+        border-radius: 15px;
+        width: 320px;
+        height: 400px;       
+        margin: 20px 20px;
+        
+    }
+
+    .image{
+        height: 180px;
+        margin-bottom: 20px;
+        background-size: cover;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .image-dog{
+        background-image: url(assets/Rectangle\ 28.png);
+        
+    }
+    .image-cat{
+        background-image: url(assets/image\ 3.png);
+    }
+    .cards p{
+        padding: 10px;
+    }
+    .cards h3{
+        margin-left: 120px;
+    }
+
+    /* Rodape */
+    .flex5{
+        flex-direction: row;
+    }
+    #IconLocal {
+        display: inline;
+    }
+    #MapaLocal {
+        display: none;
+    }
+    #maps{
+        display: inline;
+    }
+
+    #maps iframe{
+        width: 400px;
+        height: 300px;
+    }
+
+   
+    
+   
+}

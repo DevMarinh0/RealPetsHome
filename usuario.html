@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="usuario.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-header">
+                <img src="assets/user-3296 (1).png" alt="" class="profile-img">
+                <div class="profile-text-container">
+                    <h1 class="profile-title">exemplo</h1>
+                    <p class="profile-email">exemplo@gmail.com</p>
+                </div>
+            </div>
+
+
+            <div class="menu">
+                <a href="#" class="menu-link"><i class="fa-solid fa-circle-user menu-icon"></i>Conta</a>
+                <a href="#" class="menu-link"><i class="fa-solid fa-gear menu-icon"></i>Configuração</a>
+                <a href="login.html" class="menu-link"><i class="fa-solid fa-right-from-bracket menu-icon"></i>Sair da conta</a>
+            </div>
+        </div>
+
+        <form class="account">
+            <div class="account-header">
+                <h1 class="account-title">Configuração da conta</h1>
+                <div class="btn-container">
+                    <button class="btn-cancel">Cancelar</button>
+                    <button class="btn-save">Salvar</button>
+                </div>
+            </div>
+
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Nome" />
+                </div>
+                <div class="input-container">
+                    <label>CPF</label>
+                    <input type="text" placeholder="CPF" />
+                </div>
+            </div>
+
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" />
+                </div>
+                <div class="input-container">
+                    <label>Senha</label>
+                    <input type="text" placeholder="Senha" />
+                </div>
+            </div>
+
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Endereço</label>
+                    <textarea placeholder="Endereço"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

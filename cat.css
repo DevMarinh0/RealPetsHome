@@ -26,6 +26,7 @@ h4 {
 h6 {
   font-weight: 700;
   font-size: 12px;
+  
 }
 
 p {
@@ -41,6 +42,28 @@ p {
 body {
   width: 100%;
   background-color: #ffffd2;
+}
+.whatsapp a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Mantém a cor padrão do texto */
+}
+
+.whatsapp img {
+  width: 30px; /* Ajuste o tamanho conforme necessário */
+  margin-right: 7px; /* Espaçamento entre a imagem e o número */
+}
+
+.whatsapp strong {
+  font-weight: bold;
+}
+
+.whatsapp a:hover,
+.whatsapp a:focus,
+.whatsapp a:active {
+  text-decoration: none; /* Remove sublinhado ao clicar */
+  color: inherit; /* Mantém a cor padrão ao clicar */
 }
 
 #header{
@@ -258,3 +281,5 @@ body {
 #prodetails .single-pro-details span{
   line-height: 25px;
 }
+
+

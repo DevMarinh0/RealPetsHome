@@ -19,7 +19,7 @@ input {
   overflow: hidden;
 }
 
-.forms-container {
+.formulario-container {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -27,7 +27,7 @@ input {
   left: 0;
 }
 
-.signin-signup {
+.login-cadastro {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -51,22 +51,22 @@ form {
   grid-row: 1 / 2;
 }
 
-form.sign-up-form {
+form.formulario-cadastro {
   opacity: 0;
   z-index: 1;
 }
 
-form.sign-in-form {
+form.formulario-login {
   z-index: 2;
 }
 
-.title {
+.titulo {
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
 }
 
-.input-field {
+.campo-input {
   max-width: 380px;
   width: 100%;
   background-color: #f0f0f0;
@@ -79,7 +79,7 @@ form.sign-in-form {
   position: relative;
 }
 
-.input-field i {
+.campo-input i {
   text-align: center;
   line-height: 55px;
   color: #acacac;
@@ -87,7 +87,7 @@ form.sign-in-form {
   font-size: 1.1rem;
 }
 
-.input-field input {
+.campo-input input {
   background: none;
   outline: none;
   border: none;
@@ -97,22 +97,22 @@ form.sign-in-form {
   color: #333;
 }
 
-.input-field input::placeholder {
+.campo-input input::placeholder {
   color: #aaa;
   font-weight: 500;
 }
 
-.social-text {
+.texto-social {
   padding: 0.7rem 0;
   font-size: 1rem;
 }
 
-.social-media {
+.midia-social {
   display: flex;
   justify-content: center;
 }
 
-.social-icon {
+.icone-social {
   height: 46px;
   width: 46px;
   display: flex;
@@ -127,12 +127,12 @@ form.sign-in-form {
   transition: 0.3s;
 }
 
-.social-icon:hover {
+.icone-social:hover {
   color: #e4482c;
   border-color: #e4482c;
 }
 
-.btn {
+.botao {
   width: 150px;
   background-color: #990000;
   border: none;
@@ -147,10 +147,11 @@ form.sign-in-form {
   transition: 0.5s;
 }
 
-.btn:hover {
+.botao:hover {
   background-color: #e4482c;
 }
-.panels-container {
+
+.painel-container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -174,13 +175,13 @@ form.sign-in-form {
   z-index: 6;
 }
 
-.image {
+.imagem {
   width: 80%;
   transition: transform 1.1s ease-in-out;
   transition-delay: 0.4s;
 }
 
-.panel {
+.painel {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -189,34 +190,34 @@ form.sign-in-form {
   z-index: 6;
 }
 
-.left-panel {
+.painel-esquerdo {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
 }
 
-.right-panel {
+.painel-direito {
   pointer-events: none;
   padding: 3rem 12% 2rem 17%;
 }
 
-.panel .content {
+.painel .conteudo {
   color: #fff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
 
-.panel h3 {
+.painel h3 {
   font-weight: 600;
   line-height: 1;
   font-size: 1.5rem;
 }
 
-.panel p {
+.painel p {
   font-size: 0.95rem;
   padding: 0.7rem 0;
 }
 
-.btn.transparent {
+.botao.transparente {
   margin: 0;
   background: none;
   border: 2px solid #fff;
@@ -226,47 +227,47 @@ form.sign-in-form {
   font-size: 0.8rem;
 }
 
-.right-panel .image,
-.right-panel .content {
+.painel-direito .imagem,
+.painel-direito .conteudo {
   transform: translateX(800px);
 }
 
-/* ANIMATION */
+/* ANIMAÇÃO */
 
-.container.sign-up-mode:before {
+.container.modo-cadastro:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
+.container.modo-cadastro .painel-esquerdo .imagem,
+.container.modo-cadastro .painel-esquerdo .conteudo {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .signin-signup {
+.container.modo-cadastro .login-cadastro {
   left: 25%;
 }
 
-.container.sign-up-mode form.sign-up-form {
+.container.modo-cadastro form.formulario-cadastro {
   opacity: 1;
   z-index: 2;
 }
 
-.container.sign-up-mode form.sign-in-form {
+.container.modo-cadastro form.formulario-login {
   opacity: 0;
   z-index: 1;
 }
 
-.container.sign-up-mode .right-panel .image,
-.container.sign-up-mode .right-panel .content {
+.container.modo-cadastro .painel-direito .imagem,
+.container.modo-cadastro .painel-direito .conteudo {
   transform: translateX(0%);
 }
 
-.container.sign-up-mode .left-panel {
+.container.modo-cadastro .painel-esquerdo {
   pointer-events: none;
 }
 
-.container.sign-up-mode .right-panel {
+.container.modo-cadastro .painel-direito {
   pointer-events: all;
 }
 
@@ -275,24 +276,24 @@ form.sign-in-form {
     min-height: 800px;
     height: 100vh;
   }
-  .signin-signup {
+  .login-cadastro {
     width: 100%;
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
   }
 
-  .signin-signup,
-  .container.sign-up-mode .signin-signup {
+  .login-cadastro,
+  .container.modo-cadastro .login-cadastro {
     left: 50%;
   }
 
-  .panels-container {
+  .painel-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 1fr;
   }
 
-  .panel {
+  .painel {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -300,36 +301,36 @@ form.sign-in-form {
     grid-column: 1 / 2;
   }
 
-  .right-panel {
+  .painel-direito {
     grid-row: 3 / 4;
   }
 
-  .left-panel {
+  .painel-esquerdo {
     grid-row: 1 / 2;
   }
 
-  .image {
+  .imagem {
     width: 200px;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.6s;
   }
 
-  .panel .content {
+  .painel .conteudo {
     padding-right: 15%;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.8s;
   }
 
-  .panel h3 {
+  .painel h3 {
     font-size: 1.2rem;
   }
 
-  .panel p {
+  .painel p {
     font-size: 0.7rem;
     padding: 0.5rem 0;
   }
 
-  .btn.transparent {
+  .botao.transparente {
     width: 110px;
     height: 35px;
     font-size: 0.7rem;
@@ -346,28 +347,28 @@ form.sign-in-form {
     transition: 2s ease-in-out;
   }
 
-  .container.sign-up-mode:before {
+  .container.modo-cadastro:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
   }
 
-  .container.sign-up-mode .left-panel .image,
-  .container.sign-up-mode .left-panel .content {
+  .container.modo-cadastro .painel-esquerdo .imagem,
+  .container.modo-cadastro .painel-esquerdo .conteudo {
     transform: translateY(-300px);
   }
 
-  .container.sign-up-mode .right-panel .image,
-  .container.sign-up-mode .right-panel .content {
+  .container.modo-cadastro .painel-direito .imagem,
+  .container.modo-cadastro .painel-direito .conteudo {
     transform: translateY(0px);
   }
 
-  .right-panel .image,
-  .right-panel .content {
+  .painel-direito .imagem,
+  .painel-direito .conteudo {
     transform: translateY(300px);
   }
 
-  .container.sign-up-mode .signin-signup {
+  .container.modo-cadastro .login-cadastro {
     top: 5%;
     transform: translate(-50%, 0);
   }
@@ -378,10 +379,10 @@ form.sign-in-form {
     padding: 0 1.5rem;
   }
 
-  .image {
+  .imagem {
     display: none;
   }
-  .panel .content {
+  .painel .conteudo {
     padding: 0.5rem 1rem;
   }
   .container {
@@ -393,7 +394,7 @@ form.sign-in-form {
     left: 50%;
   }
 
-  .container.sign-up-mode:before {
+  .container.modo-cadastro:before {
     bottom: 28%;
     left: 50%;
   }

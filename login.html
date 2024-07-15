@@ -1,64 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="login.css" />
-  <title>Login e Registro do Usuario</title>
+  <title>Login e Registro do Usuário</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="forms-container">
-      <div class="signin-signup">
-        <form action="#" class="sign-in-form" id="sign-in-form">
-          <h2 class="title">Login</h2>
-          <div class="input-field">
+    <div class="formulario-container">
+      <div class="login-cadastro">
+        <form action="#" class="formulario-login" id="formulario-login">
+          <h2 class="titulo">Login</h2>
+          <div class="campo-input">
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Nome" />
           </div>
-          <div class="input-field">
+          <div class="campo-input">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Senha" />
           </div>
-          <input type="submit" value="Login" class="btn solid" />
-          <p class="social-text">Ou faça login em plataformas sociais</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
+          <input type="submit" value="Login" class="botao solido" />
+          <p class="texto-social">Ou faça login em plataformas sociais</p>
+          <div class="midia-social">
+            <a href="#" class="icone-social">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="icone-social">
               <i class="fab fa-google"></i>
             </a>
           </div>
         </form>
-        <form action="#" class="sign-up-form" id="sign-up-form">
-          <h2 class="title">Cadastro</h2>
-          <div class="input-field">
+        <form action="#" class="formulario-cadastro" id="formulario-cadastro">
+          <h2 class="titulo">Cadastro</h2>
+          <div class="campo-input">
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Nome" />
           </div>
-          <div class="input-field">
+          <div class="campo-input">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" />
           </div>
-          <div class="input-field">
+          <div class="campo-input">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Senha" />
           </div>
-          <div class="input-field">
+          <div class="campo-input">
             <i class="fas fa-lock"></i>
             <input type="text" placeholder="CPF" />
           </div>
-          <input type="submit" class="btn" value="Cadastrar" />
-          <p class="social-text">Ou fazer o Cadastro em plataformas sociais</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
+          <input type="submit" class="botao" value="Cadastrar" />
+          <p class="texto-social">Ou faça o Cadastro em plataformas sociais</p>
+          <div class="midia-social">
+            <a href="#" class="icone-social">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="icone-social">
               <i class="fab fa-google"></i>
             </a>
           </div>
@@ -66,26 +66,26 @@
       </div>
     </div>
 
-    <div class="panels-container">
-      <div class="panel left-panel">
-        <div class="content">
+    <div class="painel-container">
+      <div class="painel painel-esquerdo">
+        <div class="conteudo">
           <h3>Não tem conta?</h3>
           <p>
             Clique no botão abaixo para fazer o seu registro!
           </p>
-          <button class="btn transparent" id="sign-up-btn">
+          <button class="botao transparente" id="botao-cadastro">
             Registro
           </button>
         </div>
-        <img src="login.svg" class="image" alt="" />
+        <img src="login.svg" class="imagem" alt="" />
       </div>
-      <div class="panel right-panel">
-        <div class="content">
-          <h3>Ja tem uma Conta?</h3>
+      <div class="painel painel-direito">
+        <div class="conteudo">
+          <h3>Já tem uma Conta?</h3>
           <p>
             Então aperte o botão abaixo para fazer o login.
           </p>
-          <button class="btn transparent" id="sign-in-btn">
+          <button class="botao transparente" id="botao-login">
             Logar
           </button>
         </div>
@@ -94,26 +94,26 @@
   </div>
 
   <script>
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const botao_login = document.querySelector("#botao-login");
+    const botao_cadastro = document.querySelector("#botao-cadastro");
     const container = document.querySelector(".container");
-    const sign_in_form = document.querySelector("#sign-in-form");
-    const sign_up_form = document.querySelector("#sign-up-form");
+    const formulario_login = document.querySelector("#formulario-login");
+    const formulario_cadastro = document.querySelector("#formulario-cadastro");
 
-    sign_up_btn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
+    botao_cadastro.addEventListener("click", () => {
+      container.classList.add("modo-cadastro");
     });
 
-    sign_in_btn.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode");
+    botao_login.addEventListener("click", () => {
+      container.classList.remove("modo-cadastro");
     });
 
-    sign_in_form.addEventListener("submit", (e) => {
+    formulario_login.addEventListener("submit", (e) => {
       e.preventDefault(); // Impede o envio do formulário
       window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
     });
 
-    sign_up_form.addEventListener("submit", (e) => {
+    formulario_cadastro.addEventListener("submit", (e) => {
       e.preventDefault(); // Impede o envio do formulário
       window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
     });

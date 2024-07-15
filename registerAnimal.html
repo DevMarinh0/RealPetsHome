@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Do Animal</title>
+    <title>Registro do Animal</title>
     <link rel="stylesheet" href="./registroAnimal.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="title">Registro Do Animal</div>
-        <div class="content">
-            <form action="#" id="animal-registration-form">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Nome Completo do Animal:</span>
+        <div class="titulo">Registro do Animal</div>
+        <div class="conteudo">
+            <form action="#" id="formulario-registro-animal">
+                <div class="dados-do-usuario">
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Nome Completo do Animal:</span>
                         <input type="text" placeholder="Nome" required>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Espécie do Animal:</span>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Espécie do Animal:</span>
                         <input type="text" placeholder="Espécie" required>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Idade do Animal:</span>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Idade do Animal:</span>
                         <input type="text" placeholder="Idade" required>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Descrição do Animal:</span>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Descrição do Animal:</span>
                         <input type="text" placeholder="Descrição" required>
                     </div>
                 </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <span class="gender-title">Gênero</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot-one"></span>
-                            <span class="gender">Masculino</span>
+                <div class="detalhes-do-genero">
+                    <input type="radio" name="genero" id="ponto-1">
+                    <input type="radio" name="genero" id="ponto-2">
+                    <span class="titulo-genero">Gênero</span>
+                    <div class="categoria">
+                        <label for="ponto-1">
+                            <span class="ponto-um"></span>
+                            <span class="genero">Masculino</span>
                         </label>
-                        <label for="dot-2">
-                            <span class="dot-two"></span>
-                            <span class="gender">Feminino</span>
+                        <label for="ponto-2">
+                            <span class="ponto-dois"></span>
+                            <span class="genero">Feminino</span>
                         </label>
                     </div>
-                    <div class="button">
+                    <div class="botao">
                         <input type="submit" value="Registrar">
                     </div>
                 </div>
@@ -53,13 +55,14 @@
     </div>
 
     <script>
-        const registrationForm = document.getElementById('animal-registration-form');
+        const formularioRegistro = document.getElementById('formulario-registro-animal');
 
-        registrationForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
+        formularioRegistro.addEventListener('submit', function(event) {
+            event.preventDefault();
 
             window.location.href = 'index.html';
         });
     </script>
 </body>
+
 </html>

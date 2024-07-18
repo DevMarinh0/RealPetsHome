@@ -13,15 +13,15 @@
   <div class="container">
     <div class="formulario-container">
       <div class="login-cadastro">
-        <form action="#" class="formulario-login" id="formulario-login">
+        <form action="login.php" method="POST" class="formulario-login" id="formulario-login">
           <h2 class="titulo">Login</h2>
           <div class="campo-input">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nome" />
+            <input type="email" name="email" placeholder="Email" required />
           </div>
           <div class="campo-input">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" />
+            <input type="password" name="senha" placeholder="Senha" required />
           </div>
           <input type="submit" value="Login" class="botao solido" />
           <p class="texto-social">Ou faça login em plataformas sociais</p>
@@ -34,23 +34,23 @@
             </a>
           </div>
         </form>
-        <form action="#" class="formulario-cadastro" id="formulario-cadastro">
+        <form action="register.php" method="POST" class="formulario-cadastro" id="formulario-cadastro">
           <h2 class="titulo">Cadastro</h2>
           <div class="campo-input">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nome" />
+            <input type="text" name="nome" placeholder="Nome" required />
           </div>
           <div class="campo-input">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" name="email" placeholder="Email" required />
           </div>
           <div class="campo-input">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" />
+            <input type="password" name="senha" placeholder="Senha" required />
           </div>
           <div class="campo-input">
-            <i class="fas fa-lock"></i>
-            <input type="text" placeholder="CPF" />
+            <i class="fas fa-phone"></i>
+            <input type="text" name="cpf" placeholder="Numero de teleefone" required />
           </div>
           <input type="submit" class="botao" value="Cadastrar" />
           <p class="texto-social">Ou faça o Cadastro em plataformas sociais</p>
@@ -62,7 +62,7 @@
               <i class="fab fa-google"></i>
             </a>
           </div>
-        </form>
+        </form>        
       </div>
     </div>
 

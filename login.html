@@ -50,7 +50,7 @@
           </div>
           <div class="campo-input">
             <i class="fas fa-phone"></i>
-            <input type="text" name="cpf" placeholder="Numero de teleefone" required />
+            <input type="text" name="telefone" placeholder="Telefone" required />
           </div>
           <input type="submit" class="botao" value="Cadastrar" />
           <p class="texto-social">Ou faça o Cadastro em plataformas sociais</p>
@@ -62,7 +62,7 @@
               <i class="fab fa-google"></i>
             </a>
           </div>
-        </form>        
+        </form>
       </div>
     </div>
 
@@ -108,15 +108,15 @@
       container.classList.remove("modo-cadastro");
     });
 
-    formulario_login.addEventListener("submit", (e) => {
-      e.preventDefault(); // Impede o envio do formulário
-      window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
-    });
+  formulario_login.addEventListener("submit", (e) => {
+    e.preventDefault(); // Impede o envio padrão do formulário
+    formulario_login.submit(); // Envia o formulário para login.php
+  });
 
-    formulario_cadastro.addEventListener("submit", (e) => {
-      e.preventDefault(); // Impede o envio do formulário
-      window.location.href = 'registerAnimal.html'; // Redireciona para registerAnimal.html
-    });
+  formulario_cadastro.addEventListener("submit", (e) => {
+    e.preventDefault(); // Impede o envio padrão do formulário
+    formulario_cadastro.submit(); // Envia o formulário para register.php
+  });
   </script>
 </body>
 

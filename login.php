@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($senha, $row['senha'])) {
-            echo "Login bem-sucedido!";
+            header("Location: registerAnimal.html");
+            exit();
         } else {
             echo "Senha incorreta!";
         }

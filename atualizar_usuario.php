@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $endereco = $_POST['endereco'];
     $senha = $_POST['senha'];
 
-    // Atualiza as informações do usuário no banco de dados
     if (!empty($senha)) {
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
         $sql = "UPDATE usuarios SET nome = ?, email = ?, telefone = ?, senha = ?, endereco = ? WHERE id = ?";

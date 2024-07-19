@@ -2,14 +2,6 @@
 session_start();
 include 'conexao.php'; // Inclua o arquivo de conexão com o banco de dados
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
-
-$usuario_id = $_SESSION['usuario_id'];
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -17,18 +9,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $telefone = $_POST['telefone'];
     $endereco = $_POST['endereco'];
 
-    $sql = "UPDATE usuarios SET nome = ?, email = ?, senha = ?, telefone = ?, endereco = ? WHERE id = ?";
+    // Insere os dados no banco de dados
+    $sql = "INSERT INTO usuarios (nome, email, senha, telefone, endereco) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi", $nome, $email, $senha, $telefone, $endereco, $usuario_id);
+    $stmt->bind_param("sssss", $nome, $email, $senha, $telefone, $endereco);
 
     if ($stmt->execute()) {
+        $_SESSION['usuario_id'] = $stmt->insert_id;
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['telefone'] = $telefone;
         $_SESSION['endereco'] = $endereco;
-        header("Location: usuario.php");
+        header("Location: registerAnimal.html");
     } else {
-        echo "Erro ao atualizar o usuário: " . $stmt->error;
+        echo "Erro ao cadastrar o usuário: " . $stmt->error;
     }
 
     $stmt->close();

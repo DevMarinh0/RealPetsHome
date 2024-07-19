@@ -1,7 +1,8 @@
 <?php
 session_start();
-include 'conexao.php'; 
+include 'conexao.php'; // Inclua o arquivo de conexão com o banco de dados
 
+// Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
@@ -9,7 +10,6 @@ if (!isset($_SESSION['usuario_id'])) {
 
 $usuario_id = $_SESSION['usuario_id'];
 
-// Atualize a consulta SQL para incluir o campo 'endereco'
 $sql = "SELECT nome, email, telefone, endereco FROM usuarios WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $usuario_id);
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     $email = $usuario['email'];
     $telefone = $usuario['telefone'];
     $endereco = $usuario['endereco'];
-} else {    
+} else {
     echo "Usuário não encontrado!";
     exit();
 }
@@ -30,5 +30,6 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 
+// Inclui o arquivo HTML
 include 'usuario.html';
 ?>

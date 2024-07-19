@@ -13,10 +13,10 @@
   <div class="container">
     <div class="formulario-container">
       <div class="login-cadastro">
-        <form action="login.php" method="POST" class="formulario-login" id="formulario-login">
+        <form action="processa_login.php" method="POST" class="formulario-login" id="formulario-login">
           <h2 class="titulo">Login</h2>
           <div class="campo-input">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-envelope"></i>
             <input type="email" name="email" placeholder="Email" required />
           </div>
           <div class="campo-input">
@@ -34,7 +34,7 @@
             </a>
           </div>
         </form>
-        <form action="register.php" method="POST" class="formulario-cadastro" id="formulario-cadastro">
+        <form action="processa_cadastro.php" method="POST" class="formulario-cadastro" id="formulario-cadastro">
           <h2 class="titulo">Cadastro</h2>
           <div class="campo-input">
             <i class="fas fa-user"></i>
@@ -51,6 +51,10 @@
           <div class="campo-input">
             <i class="fas fa-phone"></i>
             <input type="text" name="telefone" placeholder="Telefone" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-address-card"></i>
+            <input type="text" name="endereço" placeholder="endereço" required />
           </div>
           <input type="submit" class="botao" value="Cadastrar" />
           <p class="texto-social">Ou faça o Cadastro em plataformas sociais</p>
@@ -97,8 +101,6 @@
     const botao_login = document.querySelector("#botao-login");
     const botao_cadastro = document.querySelector("#botao-cadastro");
     const container = document.querySelector(".container");
-    const formulario_login = document.querySelector("#formulario-login");
-    const formulario_cadastro = document.querySelector("#formulario-cadastro");
 
     botao_cadastro.addEventListener("click", () => {
       container.classList.add("modo-cadastro");
@@ -107,16 +109,6 @@
     botao_login.addEventListener("click", () => {
       container.classList.remove("modo-cadastro");
     });
-
-  formulario_login.addEventListener("submit", (e) => {
-    e.preventDefault(); // Impede o envio padrão do formulário
-    formulario_login.submit(); // Envia o formulário para login.php
-  });
-
-  formulario_cadastro.addEventListener("submit", (e) => {
-    e.preventDefault(); // Impede o envio padrão do formulário
-    formulario_cadastro.submit(); // Envia o formulário para register.php
-  });
   </script>
 </body>
 

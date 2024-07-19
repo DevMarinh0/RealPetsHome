@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <head>
+<html lang="pt-BR">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tela do Usuário</title>
@@ -15,57 +16,58 @@
       <div class="cabecalho-perfil">
         <img src="assets/user-3296 (1).png" alt="" class="imagem-perfil">
         <div class="container-texto-perfil">
-          <h1 class="titulo-perfil">exemplo</h1>
-          <p class="email-perfil">exemplo@gmail.com</p>
+          <h1 class="titulo-perfil"><?php echo htmlspecialchars($nome); ?></h1>
+          <p class="email-perfil"><?php echo htmlspecialchars($email); ?></p>
+          <p class="telefone-perfil"><?php echo htmlspecialchars($telefone); ?></p>
+          <p class="endereco-perfil"><?php echo htmlspecialchars($endereco); ?></p>
         </div>
       </div>
 
       <div class="menu">
         <a href="#" class="link-menu"><i class="fa-solid fa-circle-user icone-menu"></i>Conta</a>
         <a href="#" class="link-menu"><i class="fa-solid fa-gear icone-menu"></i>Configuração</a>
-        <a href="login.html" class="link-menu"><i class="fa-solid fa-right-from-bracket icone-menu"></i>Sair da conta</a>
+        <a href="logout.php" class="link-menu"><i class="fa-solid fa-right-from-bracket icone-menu"></i>Sair da conta</a>
       </div>
     </div>
 
-    <form class="conta">
+    <form class="conta" action="atualizar_usuario.php" method="POST">
       <div class="cabecalho-conta">
         <h1 class="titulo-conta">Configuração da conta</h1>
         <div class="container-botoes">
-          <button class="botao-cancelar">Cancelar</button>
-          <button class="botao-salvar">Salvar</button>
+          <button type="button" class="botao-cancelar">Cancelar</button>
+          <button type="submit" class="botao-salvar">Salvar</button>
         </div>
       </div>
 
       <div class="edicao-conta">
         <div class="container-input">
           <label>Nome</label>
-          <input type="text" placeholder="Nome" />
+          <input type="text" name="nome" placeholder="Nome" value="<?php echo htmlspecialchars($nome); ?>" required />
         </div>
         <div class="container-input">
-          <label>CPF</label>
-          <input type="text" placeholder="CPF" />
+          <label>Telefone</label>
+          <input type="text" name="telefone" placeholder="Telefone" value="<?php echo htmlspecialchars($telefone); ?>" required />
         </div>
       </div>
 
       <div class="edicao-conta">
         <div class="container-input">
           <label>Email</label>
-          <input type="email" placeholder="Email" />
+          <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>" required />
         </div>
         <div class="container-input">
-          <label>Senha</label>
-          <input type="text" placeholder="Senha" />
+          <label>Nova Senha</label>
+          <input type="password" name="senha" placeholder="Digite uma nova senha (se desejar alterar)" />
         </div>
       </div>
 
       <div class="edicao-conta">
         <div class="container-input">
           <label>Endereço</label>
-          <textarea placeholder="Endereço"></textarea>
+          <textarea name="endereco" placeholder="Endereço"><?php echo htmlspecialchars($endereco); ?></textarea>
         </div>
       </div>
     </form>
   </div>
 </body>
-
 </html>

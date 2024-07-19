@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($senha, $row['senha'])) {
-            header("Location: registerAnimal.html");
+            $_SESSION['usuario_id'] = $row['id']; 
+            header("Location: usuario.php");
             exit();
         } else {
             echo "Senha incorreta!";

@@ -23,3 +23,6 @@ CREATE TABLE animais (
 ALTER TABLE animais ADD COLUMN foto VARCHAR(255);
 
 show tables;
+
+DESCRIBE usuarios;
+DESCRIBE animais;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +7,11 @@
     <title>Registro do Animal</title>
     <link rel="stylesheet" href="./registroAnimal.css">
 </head>
-
 <body>
     <div class="container">
         <div class="titulo">Registro do Animal</div>
         <div class="conteudo">
-            <form action="registro_animal.php" method="POST" enctype="multipart/form-data" id="formulario-registro-animal">
+            <form action="registerAnimal.php" method="POST" enctype="multipart/form-data" id="formulario-registro-animal">
                 <div class="dados-do-usuario">
                     <div class="campo-de-entrada">
                         <span class="detalhes">Nome Completo do Animal:</span>
@@ -57,16 +55,5 @@
             </form>
         </div>
     </div>
-
-    <script>
-        const formularioRegistro = document.getElementById('formulario-registro-animal');
-
-        formularioRegistro.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
-
 </html>

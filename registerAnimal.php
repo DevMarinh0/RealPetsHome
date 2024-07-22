@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genero = $_POST['genero'];
     $foto = $_FILES['foto'];
 
-    // Verifica se o upload da foto foi 
+    // Verifica se o upload da foto foi bem-sucedido
     if ($foto['error'] == UPLOAD_ERR_OK) {
         $nomeFoto = basename($foto['name']);
         $caminhoFoto = 'uploads/' . $nomeFoto;
@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("ssssss", $nome, $especie, $idade, $descricao, $genero, $caminhoFoto);
 
             if ($stmt->execute()) {
-                echo "Animal registrado com sucesso!";
+                header("Location: index.html");
+                exit();
             } else {
                 echo "Erro ao registrar o animal: " . $stmt->error;
             }

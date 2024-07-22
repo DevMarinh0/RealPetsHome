@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['email'] = $email;
         $_SESSION['telefone'] = $usuario['telefone'];
         $_SESSION['endereco'] = $usuario['endereco'];
-        header("Location: registerAnimal.html");
+        header("Location: index.html");
     } else {
         echo "Email ou senha incorretos!";
     }

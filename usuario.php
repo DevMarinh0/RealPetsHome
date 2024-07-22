@@ -55,7 +55,6 @@ $conn->close();
       </div>
       <div class="menu">
         <a href="#" class="link-menu"><i class="fa-solid fa-circle-user icone-menu"></i>Conta</a>
-        <a href="#" class="link-menu"><i class="fa-solid fa-gear icone-menu"></i>Configuração</a>
         <a href="logout.php" class="link-menu"><i class="fa-solid fa-right-from-bracket icone-menu"></i>Sair da conta</a>
       </div>
     </div>

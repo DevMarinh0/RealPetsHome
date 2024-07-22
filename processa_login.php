@@ -1,12 +1,11 @@
 <?php
 session_start();
-include 'conexao.php'; // Inclua o arquivo de conexão com o banco de dados
+include 'conexao.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Verifica se o usuário existe no banco de dados
     $sql = "SELECT id, nome, telefone, endereco FROM usuarios WHERE email = ? AND senha = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $email, $senha);

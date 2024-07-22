@@ -200,6 +200,9 @@ nav ul li a {
 .cards h3{
     margin-left: 120px;
 }
+.cards a{
+    text-decoration: none;
+}
  
 
 /* Rodapé */

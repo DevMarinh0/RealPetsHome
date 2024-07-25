@@ -163,43 +163,70 @@ nav ul li a {
 
  /* Adoção  */
 
- .Card{
-    flex-wrap: wrap;
-    justify-content: center;
+
+
+/* Estilos para o carrossel */
+#carrossel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px 0; /* Espaçamento superior e inferior */
 }
 
-#adocao{
-    background-color: #e7e4e4;
+#carrossel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
-.cards{
-    background-color: white;
-    color: #3a3939;
-    border-radius: 15px;
-    width: 320px;
-    height: 400px;       
-    margin: 20px 20px;
-    
+.cards {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajusta a largura dos cards para serem mais flexíveis */
+    max-width: 320px; /* Largura máxima dos cards */
+    min-width: 200px; /* Largura mínima dos cards */
+    padding: 20px;
+    text-align: center;
 }
 
-.image{
-    height: 200px;
+/* Estilos para os botões de navegação */
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    z-index: 1;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.image {
+    height: 200px; /* Altura das imagens */
     margin-bottom: 20px;
     background-size: cover;
+    background-position: center;
     border-radius: 15px 15px 0px 0px;
 }
-.image-dog{
-    background-image: url(assets/Rectangle\ 28.png);
-}
-.image-cat{
-    background-image: url(assets/image\ 3.png);
-}
-.cards p{
-    padding: 10px;
-}
-.cards h3{
-    margin-left: 120px;
-}
+
+
+
  
 
 /* Rodapé */
@@ -270,6 +297,9 @@ footer{
     #social{
         margin: 0;
     }
+    .cards {
+        width: 70%;
+    }
     
 }
 
@@ -285,6 +315,9 @@ footer{
         width: 560px;
         height: 315px;
     }
+    .cards {
+        width: 60%;
+    }
     
 }
 
@@ -299,7 +332,9 @@ footer{
         width: 560px;
         height: 315px;
     }
-    
+    .cards {
+        width: 50%;
+    }
     
 }
 
@@ -389,42 +424,8 @@ footer{
     
     /* Adoção  */
 
-    .Card{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    #adocao{
-        background-color: #e7e4e4;
-    }
-
-    .cards{
-        background-color: white;
-        border-radius: 15px;
-        width: 320px;
-        height: 400px;       
-        margin: 20px 20px;
-        
-    }
-
-    .image{
-        height: 180px;
-        margin-bottom: 20px;
-        background-size: cover;
-        border-radius: 15px 15px 0px 0px;
-    }
-    .image-dog{
-        background-image: url(assets/Rectangle\ 28.png);
-        
-    }
-    .image-cat{
-        background-image: url(assets/image\ 3.png);
-    }
-    .cards p{
-        padding: 10px;
-    }
-    .cards h3{
-        margin-left: 120px;
+    .cards {
+        width: 33%;
     }
 
     /* Rodape */
@@ -446,7 +447,4 @@ footer{
         height: 300px;
     }
 
-   
-    
-   
 }

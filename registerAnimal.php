@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("ssssss", $nome, $especie, $idade, $descricao, $genero, $caminhoFoto);
 
             if ($stmt->execute()) {
-                header("Location: index.html");
+                header("Location: index.php");
                 exit();
             } else {
                 echo "Erro ao registrar o animal: " . $stmt->error;

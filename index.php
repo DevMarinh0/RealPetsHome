@@ -13,7 +13,7 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home</title>
-    <meta name="description" content="O projeto MyNewPet simplifica o processo de adoção de um Pet, reunindo animais amorosos a tutores responsáveis!">
+    <meta name="description" content="O projeto Pets Home simplifica o processo de adoção e compras de um Pet, reunindo animais amorosos a tutores responsáveis!">
     <link rel="icon" href="img/paw.png">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -46,7 +46,7 @@ $result = $conn->query($sql);
                 <img src="assets/dog-destaq01.jpg" alt="Cachorro" id="img-main">
             </div>
             <div id="textProj">
-                <h1>Projeto - PetsHome</h1>
+                <h1>PetsHome</h1>
                 <h2>Onde amor e cuidado se encontram!</h2>
                 <p>No Pets Home, prezamos pela transparência e segurança em todo o processo de adoção. Convidamos você a explorar nosso site, conhecer nossos animais disponíveis e se juntar a nós na missão de transformar vidas. No Pets Home, acreditamos que juntos podemos fazer a diferença.</p>
             </div>
@@ -67,36 +67,39 @@ $result = $conn->query($sql);
 
     <!-- Adoção -->
     
-<section id="adocao">
-    <div class="container">
-        <div id="carrossel-container">
-            <div id="carrossel">
-                <?php
-                include 'conexao.php'; 
+    <section id="adocao">
+        <div class="container">
+            <div id="carrossel-container">
+                <div id="carrossel">
+                    <?php
+                    include 'conexao.php'; // Inclui a conexão com o banco de dados
 
-                $sql = "SELECT nome, descricao, foto FROM animais";
-                $result = $conn->query($sql);
+                    $sql = "SELECT nome, descricao, foto FROM animais";
+                    $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo '<div class="cards">';
-                        echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
-                        echo '<h3>' . $row["nome"] . '</h3>';
-                        echo '<p>' . $row["descricao"] . '</p>';
-                        echo '</div>';
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $fotoCaminho = 'uploads/cachorro.jpg' . $row["foto"];
+                            if (!file_exists($fotoCaminho) || empty($row["foto"])) {
+                                $fotoCaminho = 'cachorro.jpg'; 
+                            }
+                            echo '<div class="cards">';
+                            echo '<div class="image" style="background-image: url(\'' . $fotoCaminho . '\');"></div>';
+                            echo '<h3>' . $row["nome"] . '</h3>';
+                            echo '<p>' . $row["descricao"] . '</p>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "Nenhum animal cadastrado.";
                     }
-                } else {
-                    echo "Nenhum animal cadastrado.";
-                }
-                
-                $conn->close();
-                ?>
+                    ?>
+                </div>
+                <button id="prevBtn">⟨</button>
+                <button id="nextBtn">⟩</button>
             </div>
-            <button id="prevBtn">⟨</button>
-            <button id="nextBtn">⟩</button>
         </div>
-    </div>
-</section>
+    </section>
+
 
 
     <!-- Rodape -->

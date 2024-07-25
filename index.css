@@ -120,7 +120,7 @@ nav ul li a {
 
 /* Destaque */
 #inicio{
-    height: 50vh;
+    height: 30vh;
     padding: 50px 0px;
     background-color: #e7e4e4;
     background-attachment: fixed;
@@ -188,8 +188,8 @@ nav ul li a {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ajusta a largura dos cards para serem mais flexíveis */
-    max-width: 320px; /* Largura máxima dos cards */
+    width: 90%; /* Ajusta a largura dos cards para serem mais flexíveis */
+    max-width: 4000px; /* Largura máxima dos cards */
     min-width: 200px; /* Largura mínima dos cards */
     padding: 20px;
     text-align: center;
@@ -200,7 +200,7 @@ nav ul li a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 7.0);
     color: white;
     border: none;
     padding: 10px;

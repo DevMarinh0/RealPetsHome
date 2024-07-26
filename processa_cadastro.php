@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['email'] = $email;
         $_SESSION['telefone'] = $telefone;
         $_SESSION['endereco'] = $endereco;
-        header("Location: index.html");
+        header("Location: index.php");
     } else {
         echo "Erro ao cadastrar o usuário: " . $stmt->error;
     }

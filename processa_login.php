@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['email'] = $email;
         $_SESSION['telefone'] = $usuario['telefone'];
         $_SESSION['endereco'] = $usuario['endereco'];
-        header("Location: index.html");
+        header("Location: index.php");
     } else {
         echo "Email ou senha incorretos!";
     }

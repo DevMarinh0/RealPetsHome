@@ -12,7 +12,7 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home</title>
-    <meta name="description" content="O projeto MyNewPet simplifica o processo de adoção de um Pet, reunindo animais amorosos a tutores responsáveis!">
+    <meta name="description" content="O projeto Pets Home simplifica o processo de adoção e castração de um Pet, reunindo animais amorosos a tutores responsáveis!">
     <link rel="icon" href="img/paw.png">
     <link rel="stylesheet" href="index.css">
 </head>

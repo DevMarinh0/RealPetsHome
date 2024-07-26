@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $usuario = $result->fetch_assoc();
         
-        if ($senha == $usuario['senha']) { // Certifique-se de que a senha está sendo verificada corretamente
+        if ($senha == $usuario['senha']) { // senha tem que esta corretamente 
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['email'] = $usuario['email'];

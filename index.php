@@ -1,8 +1,7 @@
 <?php
 include 'conexao.php';
 
-// Buscar os animais do banco de dados
-$sql = "SELECT * FROM animais";
+$sql = "SELECT id, nome, descricao, foto FROM animais";
 $result = $conn->query($sql);
 ?>
 
@@ -13,7 +12,7 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home</title>
-    <meta name="description" content="O projeto Pets Home simplifica o processo de adoção e compras de um Pet, reunindo animais amorosos a tutores responsáveis!">
+    <meta name="description" content="O projeto MyNewPet simplifica o processo de adoção de um Pet, reunindo animais amorosos a tutores responsáveis!">
     <link rel="icon" href="img/paw.png">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -46,7 +45,7 @@ $result = $conn->query($sql);
                 <img src="assets/dog-destaq01.jpg" alt="Cachorro" id="img-main">
             </div>
             <div id="textProj">
-                <h1>PetsHome</h1>
+                <h1>Projeto - PetsHome</h1>
                 <h2>Onde amor e cuidado se encontram!</h2>
                 <p>No Pets Home, prezamos pela transparência e segurança em todo o processo de adoção. Convidamos você a explorar nosso site, conhecer nossos animais disponíveis e se juntar a nós na missão de transformar vidas. No Pets Home, acreditamos que juntos podemos fazer a diferença.</p>
             </div>
@@ -59,48 +58,43 @@ $result = $conn->query($sql);
             <div id="textoSobre">
                 <h2>Sobre nós</h2>
                 <p>Em 2024, nasceu o Pets Home, um site dedicado à adoção e castração de pets. Nosso objetivo é proporcionar lares amorosos e seguros para animais de todas as raças e tamanhos, promovendo a saúde através da castração responsável!<br><br>
-                Nosso site é fácil de usar e prioriza a qualidade. Cada animal listado passa por uma avaliação completa de saúde e comportamento, garantindo que os adotantes encontrem o companheiro ideal.<br><br>
-                Além da adoção, incentivamos a castração como medida de controle populacional e prevenção de doenças. Trabalhamos com clínicas veterinárias e ONGs para oferecer serviços de castração a preços acessíveis.</p>
+                    Nosso site é fácil de usar e prioriza a qualidade. Cada animal listado passa por uma avaliação completa de saúde e comportamento, garantindo que os adotantes encontrem o companheiro ideal.<br><br>
+                    Além da adoção, incentivamos a castração como medida de controle populacional e prevenção de doenças. Trabalhamos com clínicas veterinárias e ONGs para oferecer serviços de castração a preços acessíveis.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Adoção -->
-    
     <section id="adocao">
         <div class="container">
-            <div id="carrossel-container">
-                <div id="carrossel">
-                    <?php
-                    include 'conexao.php'; // Inclui a conexão com o banco de dados
-
-                    $sql = "SELECT nome, descricao, foto FROM animais";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            $fotoCaminho = 'uploads/cachorro.jpg' . $row["foto"];
-                            if (!file_exists($fotoCaminho) || empty($row["foto"])) {
-                                $fotoCaminho = 'cachorro.jpg'; 
+            <div class="carousel">
+                <button class="carousel-btn prev">&#x276E;</button>
+                <div class="carousel-wrapper">
+                    <div class="Card">
+                        <?php
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div class="cards">';
+                                if ($row["foto"]) {
+                                    echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
+                                } else {
+                                    echo '<div class="image" style="background-image: url(\'assets/default.jpg\');"></div>';
+                                }
+                                echo '<h3>' . $row["nome"] . '</h3>';
+                                echo '<p>' . $row["descricao"] . '</p>';
+                                echo '</div>';
                             }
-                            echo '<div class="cards">';
-                            echo '<div class="image" style="background-image: url(\'' . $fotoCaminho . '\');"></div>';
-                            echo '<h3>' . $row["nome"] . '</h3>';
-                            echo '<p>' . $row["descricao"] . '</p>';
-                            echo '</div>';
+                        } else {
+                            echo "Nenhum animal encontrado.";
                         }
-                    } else {
-                        echo "Nenhum animal cadastrado.";
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
-                <button id="prevBtn">⟨</button>
-                <button id="nextBtn">⟩</button>
+                <button class="carousel-btn next">&#x276F;</button>
             </div>
         </div>
     </section>
-
-
 
     <!-- Rodape -->
     <address>
@@ -131,7 +125,27 @@ $result = $conn->query($sql);
 
     <a href="#inicio" id="topo"><img src="assets/topo.png" alt="Topo do site"></a>
 
-    <script src="carrosel.js"></script>
+    <script>
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const cardContainer = document.querySelector('.Card');
+
+        prevButton.addEventListener('click', () => {
+            cardContainer.scrollBy({
+                top: 0,
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+
+        nextButton.addEventListener('click', () => {
+            cardContainer.scrollBy({
+                top: 0,
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
 

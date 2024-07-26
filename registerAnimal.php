@@ -7,33 +7,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idade = $_POST['idade'];
     $descricao = $_POST['descricao'];
     $genero = $_POST['genero'];
-    $foto = $_FILES['foto'];
 
-    // Verifica se o upload da foto foi bem-sucedido
-    if ($foto['error'] == UPLOAD_ERR_OK) {
-        $nomeFoto = basename($foto['name']);
-        $caminhoFoto = 'uploads/' . $nomeFoto;
+    // Tratamento do upload da imagem
+    $foto = $_FILES['foto']['name'];
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($foto);
+    move_uploaded_file($_FILES['foto']['tmp_name'], $target_file);
 
-        // Move o arquivo enviado para o diretório de destino
-        if (move_uploaded_file($foto['tmp_name'], $caminhoFoto)) {
-            // Insere os dados no banco de dados
-            $sql = "INSERT INTO animais (nome, especie, idade, descricao, genero, foto) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssss", $nome, $especie, $idade, $descricao, $genero, $caminhoFoto);
+    // Insere os dados no banco de dados
+    $sql = "INSERT INTO animais (nome, especie, idade, descricao, genero, foto) 
+            VALUES ('$nome', '$especie', $idade, '$descricao', '$genero', '$foto')";
 
-            if ($stmt->execute()) {
-                header("Location: index.php");
-                exit();
-            } else {
-                echo "Erro ao registrar o animal: " . $stmt->error;
-            }
-
-            $stmt->close();
-        } else {
-            echo "Erro ao mover o arquivo da foto.";
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "Novo registro criado com sucesso";
+        header("Location: index.php");
     } else {
-        echo "Erro no upload da foto.";
+        echo "Erro: " . $sql . "<br>" . $conn->error;
     }
 
     $conn->close();

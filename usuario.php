@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     $telefone = $usuario['telefone'];
     $endereco = $usuario['endereco'];
 } else {
-    echo "Usuário não encontrado!";
+    header("Location: login.html");
     exit();
 }
 

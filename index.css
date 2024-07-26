@@ -162,10 +162,6 @@ nav ul li a {
 
  /* Adoção  */
 
-
-
-/* Estilos para o carrossel */
-/* Estilos para o carrossel */
 .carousel {
     display: flex;
     justify-content: center;
@@ -216,11 +212,11 @@ nav ul li a {
 }
 
 .prev {
-    left: -25px;
+    left: -55px;
 }
 
 .next {
-    right: -25px;
+    right: -35px;
 }
  
 

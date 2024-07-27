@@ -84,9 +84,9 @@ form .detalhes-do-genero .titulo-genero {
 
 form .categoria {
     display: flex;
-    width: 80%;
-    margin: 14px 0;
+    width: 100%;
     justify-content: space-between;
+    margin: 14px 0;
 }
 
 form .categoria label {
@@ -95,6 +95,9 @@ form .categoria label {
     cursor: pointer;
 }
 
+form .categoria label input {
+    margin-right: 10px;
+}
 
 form .botao {
     height: 75px;

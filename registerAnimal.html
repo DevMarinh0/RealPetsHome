@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,53 +8,66 @@
     <title>Registro do Animal</title>
     <link rel="stylesheet" href="./registroAnimal.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="titulo">Registro do Animal</div>
+        <div class="titulo">Registrar Animal</div>
         <div class="conteudo">
-            <form action="registerAnimal.php" method="POST" enctype="multipart/form-data" id="formulario-registro-animal">
+            <form action="registerAnimal.php" method="POST" enctype="multipart/form-data">
                 <div class="dados-do-usuario">
                     <div class="campo-de-entrada">
-                        <span class="detalhes">Nome Completo do Animal:</span>
+                        <span class="detalhes">Nome Completo do Animal</span>
                         <input type="text" name="nome" placeholder="Nome" required>
                     </div>
                     <div class="campo-de-entrada">
-                        <span class="detalhes">Espécie do Animal:</span>
+                        <span class="detalhes">Espécie do Animal</span>
                         <input type="text" name="especie" placeholder="Espécie" required>
                     </div>
                     <div class="campo-de-entrada">
-                        <span class="detalhes">Idade do Animal:</span>
+                        <span class="detalhes">Idade do Animal</span>
                         <input type="text" name="idade" placeholder="Idade" required>
                     </div>
                     <div class="campo-de-entrada">
-                        <span class="detalhes">Descrição do Animal:</span>
+                        <span class="detalhes">Descrição do Animal</span>
                         <input type="text" name="descricao" placeholder="Descrição" required>
                     </div>
                     <div class="campo-de-entrada">
-                        <span class="detalhes">Foto do Animal:</span>
-                        <input type="file" name="foto" accept="image/*" required>
+                        <span class="detalhes">Foto do Animal</span>
+                        <input type="file" name="foto" required>
+                    </div>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Opções de Compra</span>
+                        <div class="categoria">
+                            <label>
+                                <input type="radio" name="opcao" value="comprar" required>
+                                Comprar
+                            </label>
+                            <label>
+                                <input type="radio" name="opcao" value="adotar" required>
+                                Adotar
+                            </label>
+                        </div>
+                    </div>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Gênero</span>
+                        <div class="categoria">
+                            <label>
+                                <input type="radio" name="genero" value="masculino" required>
+                                Masculino
+                            </label>
+                            <label>
+                                <input type="radio" name="genero" value="feminino" required>
+                                Feminino
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="detalhes-do-genero">
-                    <input type="radio" name="genero" id="ponto-1" value="Masculino" required>
-                    <input type="radio" name="genero" id="ponto-2" value="Feminino" required>
-                    <span class="titulo-genero">Gênero</span>
-                    <div class="categoria">
-                        <label for="ponto-1">
-                            <span class="ponto-um"></span>
-                            <span class="genero">Masculino</span>
-                        </label>
-                        <label for="ponto-2">
-                            <span class="ponto-dois"></span>
-                            <span class="genero">Feminino</span>
-                        </label>
-                    </div>
-                    <div class="botao">
-                        <input type="submit" value="Registrar">
-                    </div>
+                <div class="botao">
+                    <input type="submit" value="Registrar">
                 </div>
             </form>
         </div>
     </div>
 </body>
+
 </html>

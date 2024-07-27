@@ -125,27 +125,7 @@ $result = $conn->query($sql);
 
     <a href="#inicio" id="topo"><img src="assets/topo.png" alt="Topo do site"></a>
 
-    <script>
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        const cardContainer = document.querySelector('.Card');
-
-        prevButton.addEventListener('click', () => {
-            cardContainer.scrollBy({
-                top: 0,
-                left: -300,
-                behavior: 'smooth'
-            });
-        });
-
-        nextButton.addEventListener('click', () => {
-            cardContainer.scrollBy({
-                top: 0,
-                left: 300,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    <script src="carrosel.js"></script>
 </body>
 </html>
 

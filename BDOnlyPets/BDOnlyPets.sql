@@ -19,6 +19,7 @@ CREATE TABLE animais (
     descricao TEXT NOT NULL,
     genero ENUM('Masculino', 'Feminino') NOT NULL
 );
+
 ALTER TABLE animais ADD COLUMN foto VARCHAR(255);
 ALTER TABLE animais ADD COLUMN opcao_compra ENUM('comprar', 'adotar') NOT NULL;
 

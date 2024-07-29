@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['endereco'] = $usuario['endereco'];
         header("Location: index.php");
     } else {
-        echo "Email ou senha incorretos!";
+        header("location: lost.html");
     }
 
     $stmt->close();

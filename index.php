@@ -100,12 +100,12 @@ $result = $conn->query($sql);
     <address>
         <div class="container flex5">
             <div id="contato">
-                <a href="https://api.whatsapp.com/send?phone=5592991997749" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=5592999999999" target="_blank">
                     <img src="assets/wpp.png" alt="whatsapp" title="Abrir WhatsApp" id="wpp">
-                    <p>(92) 99199-7749</p>
+                    <p>(92) 99999-9999</p>
                 </a>
                 <img src="assets/fone.png" alt="telefone" id="fone">
-                <p>(92) 99199-7749</p>
+                <p>(92) 99999-9999</p>
             </div>
             <div id="end">
                 <img src="assets/local.png" alt="local" id="IconLocal">

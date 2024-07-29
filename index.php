@@ -13,7 +13,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home</title>
     <meta name="description" content="O projeto Pets Home simplifica o processo de adoção e castração de um Pet, reunindo animais amorosos a tutores responsáveis!">
-    <link rel="icon" href="img/paw.png">
+    <link rel="shortcut icon" href="assets/Cat and dog-cuate 1.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>

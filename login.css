@@ -395,7 +395,7 @@ form.formulario-login {
   }
 
   .container.modo-cadastro:before {
-    bottom: 22%;
+    bottom: 20%;
     left: 50%;
   }
 }

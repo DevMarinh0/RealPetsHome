@@ -20,6 +20,13 @@ CREATE TABLE animais (
     genero ENUM('Masculino', 'Feminino') NOT NULL
 );
 
+CREATE TABLE ADMS (
+id INT auto_increment PRIMARY KEY,
+email varchar(100) NOT NULL,
+senha varchar(100) NOT NULL
+);
+ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
+
 ALTER TABLE animais ADD COLUMN foto VARCHAR(255);
 ALTER TABLE animais ADD COLUMN opcao_compra ENUM('comprar', 'adotar') NOT NULL;
 

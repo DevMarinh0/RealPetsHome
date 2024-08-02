@@ -5,7 +5,7 @@ body {
     display: flex;
 }
 
-.sidebar {
+.barra-lateral {
     width: 250px;
     background-color: #c62828; /* Cor avermelhada */
     color: white;
@@ -13,26 +13,26 @@ body {
     height: 100vh;
 }
 
-.sidebar h2 {
+.barra-lateral h2 {
     margin-top: 0;
 }
 
-.sidebar ul {
+.barra-lateral ul {
     list-style: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.barra-lateral ul li {
     margin: 20px 0;
 }
 
-.sidebar ul li a {
+.barra-lateral ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-.main-content {
+.conteudo-principal {
     flex: 1;
     padding: 20px;
 }

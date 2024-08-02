@@ -1,6 +1,8 @@
 <?php
+// Inclui o arquivo de conexão com o banco de dados
 include 'conexao.php';
 
+// Executa uma consulta para buscar id, nome, descrição e foto dos animais
 $sql = "SELECT id, nome, descricao, foto FROM animais";
 $result = $conn->query($sql);
 ?>
@@ -38,7 +40,7 @@ $result = $conn->query($sql);
         </div>
     </header>
 
-    <!-- Destaque - projeto -->
+    <!-- Destaque do projeto -->
     <main id="inicio">
         <div class="container flex2">
             <div id="destaqProj">
@@ -52,7 +54,7 @@ $result = $conn->query($sql);
         </div>
     </main>
 
-    <!-- Sobre -->
+    <!-- Sobre nós -->
     <section id="sobre">
         <div class="container flex3">
             <div id="textoSobre">
@@ -65,7 +67,7 @@ $result = $conn->query($sql);
         </div>
     </section>
 
-    <!-- Adoção -->
+    <!-- Seção de Adoção -->
     <section id="adocao">
         <div class="container">
             <div class="carousel">
@@ -73,9 +75,12 @@ $result = $conn->query($sql);
                 <div class="carousel-wrapper">
                     <div class="Card">
                         <?php
+                        // Verifica se há resultados na consulta
                         if ($result->num_rows > 0) {
+                            // Loop através dos resultados e exibe cada animal
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="cards">';
+                                // Exibe a foto do animal se existir, caso contrário, usa uma imagem padrão
                                 if ($row["foto"]) {
                                     echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
                                 } else {
@@ -86,6 +91,7 @@ $result = $conn->query($sql);
                                 echo '</div>';
                             }
                         } else {
+                            // Mensagem exibida se nenhum animal for encontrado
                             echo "Nenhum animal encontrado.";
                         }
                         ?>
@@ -96,7 +102,7 @@ $result = $conn->query($sql);
         </div>
     </section>
 
-    <!-- Rodape -->
+    <!-- Rodapé -->
     <address>
         <div class="container flex5">
             <div id="contato">
@@ -130,5 +136,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
+// Fecha a conexão com o banco de dados
 $conn->close();
 ?>

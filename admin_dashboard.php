@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets Home Adiminstrador</title>
-    <link rel="stylesheet" href="admin_dashboard.css">
+    <title>Pets Home Administrador</title>
+    <link rel="stylesheet" href="dashboard_administrador.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Pets Home Adminstrador</h2>
+    <div class="barra-lateral">
+        <h2>Pets Home Administrador</h2>
         <ul>
-        <li><a href="admin_dashboard.php">Início</a></li>
-        <li><a href="logout.php">Sair</a></li>
+        <li><a href="dashboard_administrador.php">Início</a></li>
+        <li><a href="logout_adm.php">Sair</a></li>
         </ul>
     </div>
-    <div class="main-content">
+    <div class="conteudo-principal">
         <section id="usuarios">
             <h3>Usuários</h3>
             <table>

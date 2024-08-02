@@ -1,20 +1,36 @@
 <?php
+// Inicia a sessão. Isso é necessário para acessar as variáveis de sessão.
 session_start();
+
+// Inclui o arquivo de conexão com o banco de dados. Esse arquivo deve conter as credenciais e a lógica para conectar ao banco de dados.
 include 'conexao.php';
 
+// Verifica se o usuário está autenticado, verificando se a variável de sessão 'usuario_id' está definida.
+// Se a variável não estiver definida, redireciona o usuário para a página de login.
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
 }
 
+// Obtém o ID do usuário da variável de sessão.
 $usuario_id = $_SESSION['usuario_id'];
 
+// Prepara a consulta SQL para buscar os dados do usuário na tabela 'usuarios' com base no ID do usuário.
+// Usa uma instrução preparada para evitar SQL Injection.
 $sql = "SELECT nome, email, telefone, endereco FROM usuarios WHERE id = ?";
 $stmt = $conn->prepare($sql);
+
+// Liga o parâmetro da consulta à variável '$usuario_id'. O tipo 'i' indica que o parâmetro é um inteiro.
 $stmt->bind_param("i", $usuario_id);
+
+// Executa a consulta SQL.
 $stmt->execute();
+
+// Obtém o resultado da consulta.
 $result = $stmt->get_result();
 
+// Verifica se a consulta retornou algum resultado. Se sim, obtém os dados do usuário.
+// Caso contrário, redireciona o usuário para a página de erro ou de não encontrado (lost.html).
 if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
     $nome = $usuario['nome'];
@@ -26,9 +42,13 @@ if ($result->num_rows > 0) {
     exit();
 }
 
+// Fecha a instrução preparada para liberar recursos.
 $stmt->close();
+
+// Fecha a conexão com o banco de dados.
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">

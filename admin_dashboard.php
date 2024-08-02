@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home Administrador</title>
-    <link rel="stylesheet" href="dashboard_administrador.css">
+    <link rel="stylesheet" href="admin_dashboard.css">
 </head>
 <body>
     <div class="barra-lateral">

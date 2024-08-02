@@ -4,7 +4,7 @@ $username = "root";  // nome de usuario
 $password = "";  // senha
 $dbname = "sistema_cadastro";
 
-// criando conexão
+// criando conexãox
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // verificando conexão

@@ -26,11 +26,11 @@ body {
 .register-button {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 25px;
   color: #fff;
   background-color: #e57657;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   font-family: "Poppins";
 }

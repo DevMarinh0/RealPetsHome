@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2>Admin Dashboard</h2>
+        <h2>Pets Home Adminstrador</h2>
         <ul>
         <li><a href="admin_dashboard.php">Início</a></li>
-        <li><a href="logout.php">Logout</a></li>
+        <li><a href="logout.php">Sair</a></li>
         </ul>
     </div>
     <div class="main-content">

@@ -14,7 +14,7 @@
   <div class="container">
     <div class="formulario-container">
       <div class="login-cadastro">
-        <form action="processa_login.php" method="POST" class="formulario-login" id="formulario-login">
+        <form action="processa_login" method="POST" class="formulario-login" id="formulario-login">
           <h2 class="titulo">Login</h2>
           <div class="campo-input">
             <i class="fas fa-envelope"></i>
@@ -25,15 +25,7 @@
             <input type="password" name="senha" placeholder="Senha" required />
           </div>
           <input type="submit" value="Login" class="botao solido" />
-          <p class="texto-social">Ou faça login em plataformas sociais</p>
-          <div class="midia-social">
-            <a href="#" class="icone-social">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="icone-social">
-              <i class="fab fa-google"></i>
-            </a>
-          </div>
+          <input type="submit" value="Logar como ADM" class="botao solido" onclick="window.location.href='login_adm.html'"/>
         </form>
         <form action="processa_cadastro.php" class="formulario-cadastro" id="formulario-cadastro" method="POST">
           <h2 class="titulo">Cadastro</h2>

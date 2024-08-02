@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="login.css" />
+  <title>Login e Registro do Usuário</title>
+  <link rel="shortcut icon" href="assets/Cat and dog-cuate 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="formulario-container">
+      <div class="login-cadastro">
+        <form action="processa_adm.php" method="POST" class="formulario-login" id="formulario-login">
+          <h2 class="titulo">Login ADM</h2>
+          <div class="campo-input">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="senha" placeholder="Senha" required />
+          </div>
+          <input type="submit" value="Login" class="botao solido" />
+         
+          <div class="midia-social">
+           
+            
+          </div>
+        </form>
+        <form action="processa_cadastro.php" class="formulario-cadastro" id="formulario-cadastro" method="POST">
+          <h2 class="titulo">Cadastro ADM</h2>
+          
+          <div class="campo-input">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="senha" placeholder="Senha" required />
+          </div>
+         
+         
+          <input type="submit" class="botao" value="Cadastrar" />
+          <p class="texto-social">Ou faça o Cadastro em plataformas sociais</p>
+          <div class="midia-social">
+            <a href="#" class="icone-social">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="icone-social">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="painel-container">
+      <div class="painel painel-esquerdo">
+        <div class="conteudo">
+          <h3>Não tem conta?</h3>
+          <p>
+            Clique no botão abaixo para fazer o seu registro!
+          </p>
+          <button class="botao transparente" id="botao-cadastro">
+            Registro
+          </button>
+        </div>
+        <img src="login.svg" class="imagem" alt="" />
+      </div>
+      <div class="painel painel-direito">
+        <div class="conteudo">
+          <h3>Já tem uma Conta?</h3>
+          <p>
+            Então aperte o botão abaixo para fazer o login.
+          </p>
+          <button class="botao transparente" id="botao-login">
+            Logar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const botao_login = document.querySelector("#botao-login");
+    const botao_cadastro = document.querySelector("#botao-cadastro");
+    const container = document.querySelector(".container");
+
+    botao_cadastro.addEventListener("click", () => {
+      container.classList.add("modo-cadastro");
+    });
+
+    botao_login.addEventListener("click", () => {
+      container.classList.remove("modo-cadastro");
+    });
+  </script>
+</body>
+
+</html>

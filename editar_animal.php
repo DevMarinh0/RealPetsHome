@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexao.php';
 
 if (isset($_GET['id'])) {
@@ -13,24 +14,31 @@ if (isset($_GET['id'])) {
         $opcao = $_POST['opcao'];
         $preco = $_POST['preco'];
 
+        // Inicializa a variável $foto_sql como string vazia
+        $foto_sql = "";
+
         // Se uma nova foto foi enviada, faça o upload
         if ($_FILES['foto']['name']) {
             $foto = $_FILES['foto']['name'];
             $target_dir = "uploads/";
             $target_file = $target_dir . basename($foto);
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_file)) {
-                $foto_sql = "foto='$foto',";
+                $foto_sql = ", foto=?";
             } else {
                 echo "Erro ao mover o arquivo da foto.";
-                $foto_sql = "";
             }
-        } else {
-            $foto_sql = "";
         }
 
-        $sql = "UPDATE animais SET nome=?, especie=?, idade=?, descricao=?, genero=?, opcao_compra=?, preco=?, $foto_sql WHERE id=?";
+        // Ajusta a consulta SQL para incluir a parte da foto se necessário
+        $sql = "UPDATE animais SET nome=?, especie=?, idade=?, descricao=?, genero=?, opcao_compra=?, preco=? $foto_sql WHERE id=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssissdii", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $id);
+
+        // Se uma nova foto foi enviada, inclua o parâmetro da foto
+        if ($foto_sql) {
+            $stmt->bind_param("ssissdis", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $foto, $id);
+        } else {
+            $stmt->bind_param("ssissdii", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $id);
+        }
 
         if ($stmt->execute()) {
             header("Location: admin_dashboard.php");

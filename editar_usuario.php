@@ -41,3 +41,28 @@ if (isset($_GET['id'])) {
     $stmt->close();
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+    <h2>Editar Usuário</h2>
+    <form action="" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" value="<?php echo htmlspecialchars($usuario['nome']); ?>" required>
+        <label>Email:</label>
+        <input type="email" name="email" value="<?php echo htmlspecialchars($usuario['email']); ?>" required>
+        <label>Telefone:</label>
+        <input type="text" name="telefone" value="<?php echo htmlspecialchars($usuario['telefone']); ?>" required>
+        <label>Endereço:</label>
+        <input type="text" name="endereco" value="<?php echo htmlspecialchars($usuario['endereco']); ?>" required>
+        <input type="submit" value="Salvar">
+    </form>
+    <a href="admin_dashboard.php">Voltar</a>
+</body>
+</html>
+

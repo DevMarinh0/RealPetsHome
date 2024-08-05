@@ -69,42 +69,41 @@ $result = $conn->query($sql);
 
     <!-- Seção de Adoção -->
     <section id="adocao">
-    <div class="container">
-        <div class="carousel">
-            <button class="carousel-btn prev">&#x276E;</button>
-            <div class="carousel-wrapper">
-                <div class="Card">
-                    <?php
-                    // Verifica se há resultados na consulta
-                    if ($result->num_rows > 0) {
-                        // Loop através dos resultados e exibe cada animal
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div class="cards">';
-                            // Adiciona um link ao redor do card
-                            echo '<a href="pet.php?id=' . $row["id"] . '">';
-                            // Exibe a foto do animal se existir, caso contrário, usa uma imagem padrão
-                            if ($row["foto"]) {
-                                echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
-                            } else {
-                                echo '<div class="image" style="background-image: url(\'assets/default.jpg\');"></div>';
+        <div class="container">
+            <div class="carousel">
+                <button class="carousel-btn prev" id="prevBtn">&#x276E;</button>
+                <div class="carousel-wrapper" id="carrossel">
+                    <div class="Card">
+                        <?php
+                        // Verifica se há resultados na consulta
+                        if ($result->num_rows > 0) {
+                            // Loop através dos resultados e exibe cada animal
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div class="cards">';
+                                // Adiciona um link ao redor do card
+                                echo '<a href="pet.php?id=' . $row["id"] . '">';
+                                // Exibe a foto do animal se existir, caso contrário, usa uma imagem padrão
+                                if ($row["foto"]) {
+                                    echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
+                                } else {
+                                    echo '<div class="image" style="background-image: url(\'assets/default.jpg\');"></div>';
+                                }
+                                echo '<h3>' . $row["nome"] . '</h3>';
+                                echo '<p>' . $row["descricao"] . '</p>';
+                                echo '</a>';
+                                echo '</div>';
                             }
-                            echo '<h3>' . $row["nome"] . '</h3>';
-                            echo '<p>' . $row["descricao"] . '</p>';
-                            echo '</a>';
-                            echo '</div>';
+                        } else {
+                            // Mensagem exibida se nenhum animal for encontrado
+                            echo "Nenhum animal encontrado.";
                         }
-                    } else {
-                        // Mensagem exibida se nenhum animal for encontrado
-                        echo "Nenhum animal encontrado.";
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
+                <button class="carousel-btn next" id="nextBtn">&#x276F;</button>
             </div>
-            <button class="carousel-btn next">&#x276F;</button>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Rodapé -->
     <address>

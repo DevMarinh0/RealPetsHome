@@ -1,6 +1,8 @@
 <?php
 include 'conexao.php'; // Inclui o arquivo de conexão com o banco de dados
 
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Obtém os dados do formulário
     $nome = $_POST['nome'];
@@ -8,8 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idade = $_POST['idade'];
     $descricao = $_POST['descricao'];
     $genero = $_POST['genero'];
-    $opcao = $_POST['opcao'];
-    $preco = $_POST['preco'];
+    $opcao = isset($_POST['opcao']) ? $_POST['opcao'] : null; // Captura o valor de 'opcao' ou define como null
+    $preco = isset($_POST['preco']) && $_POST['preco'] !== '' ? $_POST['preco'] : null; // Usa null se o preço não for definido
+
 
     // Trata o upload da imagem
     $foto = $_FILES['foto']['name'];

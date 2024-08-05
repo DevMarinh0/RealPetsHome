@@ -26,6 +26,8 @@ email varchar(100) NOT NULL,
 senha varchar(100) NOT NULL
 );
 ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
+ALTER TABLE animais MODIFY COLUMN preco DECIMAL(10, 2) NULL;
+
 INSERT INTO adms (email, senha) VALUES ('adm1@gmail.com', 'adm123');
 INSERT INTO adms (email, senha) VALUES ('adm2@gmail.com', 'adm123');
 

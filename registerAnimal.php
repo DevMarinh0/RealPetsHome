@@ -1,56 +1,45 @@
 <?php
-include 'conexao.php'; // Inclui o arquivo de conexão com o banco de dados
+// Inclui o arquivo de conexão com o banco de dados
+include 'conexao.php';
 
+// Verifica se o método de requisição é POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   // Obtém os dados do formulário
-$nome = $_POST['nome'];
-$especie = $_POST['especie'];
-$idade = $_POST['idade'];
-$descricao = $_POST['descricao'];
-$genero = $_POST['genero'];
-$opcao = isset($_POST['opcao']) ? $_POST['opcao'] : null;
-$preco = isset($_POST['preco']) && $_POST['preco'] !== '' ? $_POST['preco'] : null;
+    // Obtém os dados do formulário
+    $nome = $_POST['nome'];
+    $especie = $_POST['especie'];
+    $idade = $_POST['idade'];
+    $descricao = $_POST['descricao'];
+    $genero = $_POST['genero'];
+    $preco = isset($_POST['preco']) ? $_POST['preco'] : null;
+    $opcao_compra = isset($_POST['opcao_compra']) ? $_POST['opcao_compra'] : null;
 
-// Debugging: Verificando se os dados foram capturados corretamente
-echo "Nome: " . $nome . "<br>";
-echo "Espécie: " . $especie . "<br>";
-echo "Idade: " . $idade . "<br>";
-echo "Descrição: " . $descricao . "<br>";
-echo "Gênero: " . $genero . "<br>";
-echo "Opção de Compra: " . $opcao . "<br>";
-echo "Preço: " . $preco . "<br>";
-
-    // Trata o upload da imagem
-    $foto = $_FILES['foto']['name'];
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($foto);
-
-    if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_file)) {
-        // Prepara a consulta SQL para inserção
-        $sql = "INSERT INTO animais (nome, especie, idade, descricao, genero, foto, opcao_compra, preco) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-
-        if ($stmt) {
-            $stmt->bind_param("ssisssis", $nome, $especie, $idade, $descricao, $genero, $foto, $opcao, $preco);
-
-            if ($stmt->execute()) {
-                echo "Novo registro criado com sucesso";
-                //header("Location: index.php");
-                exit();
-            } else {
-                echo "Erro ao executar a consulta: " . $stmt->error;
-            }
-
-            $stmt->close();
-        } else {
-            echo "Erro ao preparar a consulta: " . $conn->error;
-        }
+    // Lida com o upload da foto
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
+        $foto = $_FILES['foto']['name'];
+        $foto_tmp = $_FILES['foto']['tmp_name'];
+        // Define o diretório onde a foto será salva
+        $foto_path = "uploads/$foto";
+        // Move o arquivo para o diretório de uploads
+        move_uploaded_file($foto_tmp, $foto_path);
     } else {
-        echo "Erro ao mover o arquivo da foto.";
+        // Se não houver foto, define uma foto padrão
+        $foto = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
     }
 
-    $conn->close();
-}
+    // Prepara a consulta SQL para inserir os dados no banco
+    $sql = "INSERT INTO animais (nome, especie, idade, descricao, genero, preco, foto, opcao_compra) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssiss", $nome, $especie, $idade, $descricao, $genero, $preco, $foto, $opcao_compra);
 
+    // Executa a consulta
+    $stmt->execute();
+
+    // Fecha a conexão com o banco de dados
+    $stmt->close();
+    $conn->close();
+    
+    // Redireciona para a página desejada após o registro
+    header("Location: index.php");
+    exit();
+}
 ?>

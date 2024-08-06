@@ -56,10 +56,9 @@ if ($result->num_rows > 0) {
                 <p><strong>Idade:</strong> <?php echo $idade; ?> anos</p>
                 <p><strong>Gênero:</strong> <?php echo $genero; ?></p>
                 <p><strong>Descrição:</strong> <?php echo $descricao; ?></p>
-                <p><strong>Opção:</strong> <?php echo ucfirst($opcao_compra); ?></p>
-                <?php if ($opcao_compra === 'comprar'): ?>
-                    <p><strong>Preço:</strong> R$ <?php echo number_format($preco, 2, ',', '.'); ?></p>
-                <?php endif; ?>
+                <p><strong>Opção:</strong> <?php echo $opcao_compra; ?></p>
+                <p><strong>Preço:</strong> R$ <?php echo number_format($preco, 2, ',', '.'); ?></p>
+         
             </div>
         </div>
     </main>

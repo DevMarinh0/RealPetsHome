@@ -2,6 +2,10 @@
 // Inicia a sessão do usuário
 session_start();
 
+// Ativa a exibição de erros para depuração
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Inclui o arquivo de conexão com o banco de dados
 include 'conexao.php'; 
 
@@ -14,6 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Prepara a consulta SQL para verificar se o usuário existe com o email e senha fornecidos
     $sql = "SELECT id, nome, telefone, endereco FROM usuarios WHERE email = ? AND senha = ?";
     $stmt = $conn->prepare($sql);
+    
+    if ($stmt === false) {
+        die('Erro ao preparar a consulta: ' . $conn->error);
+    }
+
     $stmt->bind_param("ss", $email, $senha);
     $stmt->execute();
     $result = $stmt->get_result();

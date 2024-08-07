@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario_id'])) {
 // Pegamos o ID do usuário que está logado na sessão
 $usuario_id = $_SESSION['usuario_id'];
 
-// Verificamos se o formulário foi enviado (método POST)
+// Verificamos se o formulário foi enviado (POST)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Pegamos os dados que o usuário preencheu no formulário
     $nome = $_POST['nome'];

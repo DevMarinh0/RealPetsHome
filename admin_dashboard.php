@@ -10,7 +10,7 @@
     <div class="barra-lateral">
         <h2>Pets Home Administrador</h2>
         <ul>
-        <li><a href="dashboard_administrador.php">Início</a></li>
+        <li><a href="login_adm.html">Início</a></li>
         <li><a href="logout_adm.php">Sair</a></li>
         </ul>
     </div>

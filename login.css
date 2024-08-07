@@ -65,6 +65,12 @@ form.formulario-login {
   color: #444;
   margin-bottom: 10px;
 }
+.esp_insti{
+  font-size: 2.2rem;
+color: #444;
+position: absolute;
+text-align: left;
+}
 
 .campo-input {
   max-width: 380px;

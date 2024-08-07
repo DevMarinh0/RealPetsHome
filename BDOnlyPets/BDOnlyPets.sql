@@ -25,6 +25,14 @@ id INT auto_increment PRIMARY KEY,
 email varchar(100) NOT NULL,
 senha varchar(100) NOT NULL
 );
+CREATE TABLE institucional (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    endereco VARCHAR(255)
+);
 ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
 ALTER TABLE animais MODIFY COLUMN preco DECIMAL(10, 2) NULL;
 

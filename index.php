@@ -29,7 +29,8 @@ $result = $conn->query($sql);
                 <input type="checkbox" id="check">
                 <label for="check">&#x268c;</label>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#inicio">inicio</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#adocao">Adoção e Compra</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -123,7 +124,7 @@ $result = $conn->query($sql);
                 <p>Manaus - AM</p>
                 <a href="#">
                     <img src="assets/gmail.png" alt="gmail" title="Enviar E-mail" id="email">
-                    <p>exemplo@gmail.com</p>
+                    <p>PetsHome@gmail.com</p>
                 </a>
             </div>
         </div>

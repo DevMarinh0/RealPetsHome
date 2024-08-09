@@ -102,7 +102,7 @@ nav ul {
 }
 
 nav ul li {
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid white;
 }
 
@@ -366,7 +366,6 @@ footer {
 
     nav ul li {
         float: left;
-        margin-right: 1em;
         border: 0;
     }
 

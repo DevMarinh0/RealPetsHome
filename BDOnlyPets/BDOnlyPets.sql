@@ -33,6 +33,7 @@ CREATE TABLE institucional (
     telefone VARCHAR(15) NOT NULL,
     endereco VARCHAR(255)
 );
+
 ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
 ALTER TABLE animais MODIFY COLUMN preco DECIMAL(10, 2) NULL;
 

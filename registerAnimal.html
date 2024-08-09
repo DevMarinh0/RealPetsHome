@@ -69,11 +69,11 @@
                             const comprar1 = document.getElementById('comprar1');
                             const preco2 = document.getElementById('preco2');
                             const adotar1 = document.getElementById('adotar1');
-                            
-                            comprar1.addEventListener('change', function() {
+
+                            comprar1.addEventListener('change', function () {
                                 preco2.disabled = false;
                             });
-                            adotar1.addEventListener('change', function() {
+                            adotar1.addEventListener('change', function () {
                                 preco2.disabled = true;
                                 preco2.value = ''; // Limpa o valor do campo de preço ao selecionar "Adotar"
                             });

@@ -57,7 +57,7 @@ INSERT INTO adms (email, senha) VALUES ('adm2@gmail.com', 'adm123');
 
 ALTER TABLE animais ADD COLUMN foto VARCHAR(255);
 ALTER TABLE animais ADD COLUMN opcao_compra ENUM('comprar', 'adotar') NOT NULL;
-
+ALTER TABLE produtospatrocinadores ADD COLUMN foto varchar(255);
 show tables;
 
 DESCRIBE usuarios;

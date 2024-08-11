@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro do Animal</title>
+    <link rel="shortcut icon" href="../assets/Cat and dog-cuate 1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/registroAnimal.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="titulo">Registrar Produto</div>
+        <div class="conteudo">
+            <form action="../php/register_produto.php" method="POST" enctype="multipart/form-data">
+                <div class="dados-do-usuario">
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Nome do produto</span>
+                        <input type="text" name="nome" placeholder="Nome" required>
+                    </div>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">tipo de produto</span>
+                        <input type="text" name="tipo" placeholder="Tipo" required>
+                    </div>
+                   
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Descrição do Produto</span>
+                        <input type="text" name="descricao" placeholder="Descrição" required>
+                    </div>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Foto do Produto</span>
+                        <input type="file" name="foto" required>
+                    </div>
+                           
+                        </div>
+                    </div>
+                   
+                    </div>
+                    <div class="campo-de-entrada">
+                        <span class="detalhes">Preço desejado</span>
+                        <input type="number" step="0.01" name="preco" placeholder="" id="preco2" required>
+                        
+                    </div>
+                </div>
+                <div class="botao">
+                    <input type="submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/80240b26a9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../login.css" />
+  <title>Login e Registro do Usuário</title>
+  <link rel="shortcut icon" href="../assets/Cat and dog-cuate 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="formulario-container">
+      <div class="login-cadastro">
+        <!-- Formulário de Login Institucional -->
+        <form action="../php/processa_institucional.php" method="POST" class="formulario-login" id="formulario-login">
+          <h2 class="titulo">Institucional</h2>
+          <div class="campo-input">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="senha" placeholder="Senha" required />
+          </div>
+          <input type="submit" value="Login" class="botao solido" />
+          <input type="submit" value="Logar normal" class="botao solido" onclick="window.location.href='../html/login.html'"/>
+          <input type="submit" value="Logar como ADM" class="botao solido" onclick="window.location.href='../html/login_adm.html'"/>
+        </form>
+
+        <!-- Formulário de Cadastro -->
+        <form action="../php/processa_inst_cadstro.php" class="formulario-cadastro" id="formulario-cadastro" method="POST">
+          <h2 class="titulo">Cadastro</h2>
+          <div class="campo-input">
+            <i class="fas fa-user"></i>
+            <input type="text" name="nome" placeholder="Nome" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="senha" placeholder="Senha" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-phone"></i>
+            <input type="text" name="telefone" placeholder="Telefone" required />
+          </div>
+          <div class="campo-input">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" name="endereco" placeholder="Endereço" required />
+          </div>
+          <input type="submit" class="botao" value="Cadastrar" />
+        </form>
+      </div>
+    </div>
+
+    <div class="painel-container">
+      <div class="painel painel-esquerdo">
+        <div class="conteudo">
+          <h2>Nosso site de adoção e venda de animais oferece duas formas principais de colaboração para empresas do setor pet: Parcerias com Produtos e Serviços e Anúncios de Terceiros.</h2><br><br>
+          <h3>Não tem conta?</h3>
+          <p>Clique no botão abaixo para fazer o seu registro!</p>
+          <button class="botao transparente" id="botao-cadastro">Registro</button>
+        </div>
+      </div>
+      <div class="painel painel-direito">
+        <div class="conteudo">
+          <h3>Já tem uma Conta?</h3>
+          <p>Então aperte o botão abaixo para fazer o login.</p>
+          <button class="botao transparente" id="botao-login">Logar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const botao_login = document.querySelector("#botao-login");
+    const botao_cadastro = document.querySelector("#botao-cadastro");
+    const container = document.querySelector(".container");
+
+    botao_cadastro.addEventListener("click", () => {
+      container.classList.add("modo-cadastro");
+    });
+
+    botao_login.addEventListener("click", () => {
+      container.classList.remove("modo-cadastro");
+    });
+  </script>
+</body>
+</html>

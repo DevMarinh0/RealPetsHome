@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/FormPatrocinador.css">
+    <title>Formulario Patrocinador</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2><b>Preencha o Formulário Abaixo</b></h2>
+
+        <form action="../php/formPatrocinador.php" method="POST">
+            <div class="input-box">
+                <label for="nome">Nome da Empresa ou Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="input-box">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="input-box">
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" id="telefone" required>
+            </div>
+
+            <div class="input-box">
+                <label for="localizacao">Localização</label>
+                <input type="text" name="localizacao" id="localizacao" required>
+            </div>
+
+            <div class="button-box">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -25,6 +25,7 @@ id INT auto_increment PRIMARY KEY,
 email varchar(100) NOT NULL,
 senha varchar(100) NOT NULL
 );
+
 CREATE TABLE institucional (
    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -33,6 +34,20 @@ CREATE TABLE institucional (
     telefone VARCHAR(15) NOT NULL,
     endereco VARCHAR(255)
 );
+CREATE TABLE patrocinadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20),
+    localizacao VARCHAR(255)
+);
+CREATE TABLE produtosPatrocinadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_do_produto VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    descricao_do_produto TEXT
+);
+
 
 ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
 ALTER TABLE animais MODIFY COLUMN preco DECIMAL(10, 2) NULL;

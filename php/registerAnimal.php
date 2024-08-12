@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->close();
     
     // Redireciona para a página desejada após o registro
-    header("Location: ../php/index.php");
+    header("Location: ../php/index_user.php");
     exit();
 }
 ?>

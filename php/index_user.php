@@ -23,7 +23,7 @@ $result = $conn->query($sql);
     <header>
         <div class="container flex">
             <div id="logo">
-                <img src="assets/Cat and dog-cuate 1.png" alt="pet">
+                <img src="../assets/Cat and dog-cuate 1.png" alt="pet">
             </div>
             <nav>
                 <input type="checkbox" id="check">
@@ -35,7 +35,7 @@ $result = $conn->query($sql);
                     <li><a href="#adocao">Adoção e Compra</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="usuario.php">Usuario</a></li>
-                    <li><a href="registerAnimal.html">Animal</a></li>
+                    <li><a href="../html/registerAnimal.html">Animal</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +45,7 @@ $result = $conn->query($sql);
     <main id="inicio">
         <div class="container flex2">
             <div id="destaqProj">
-                <img src="assets/dog-destaq01.jpg" alt="Cachorro" id="img-main">
+                <img src="../assets/dog-destaq01.jpg" alt="Cachorro" id="img-main">
             </div>
             <div id="textProj">
                 <h1>Projeto - PetsHome</h1>
@@ -111,19 +111,19 @@ $result = $conn->query($sql);
         <div class="container flex5">
             <div id="contato">
                 <a href="https://api.whatsapp.com/send?phone=5592999999999" target="_blank">
-                    <img src="assets/wpp.png" alt="whatsapp" title="Abrir WhatsApp" id="wpp">
+                    <img src="../assets/wpp.png" alt="whatsapp" title="Abrir WhatsApp" id="wpp">
                     <p>(92) 99999-9999</p>
                 </a>
-                <img src="assets/fone.png" alt="telefone" id="fone">
+                <img src="../assets/fone.png" alt="telefone" id="fone">
                 <p>(92) 99999-9999</p>
             </div>
             <div id="end">
-                <img src="assets/local.png" alt="local" id="IconLocal">
+                <img src="../assets/local.png" alt="local" id="IconLocal">
                 <p>Rua exemplo, n 123</p>
                 <p>Bairro exemplo</p>
                 <p>Manaus - AM</p>
                 <a href="#">
-                    <img src="assets/gmail.png" alt="gmail" title="Enviar E-mail" id="email">
+                    <img src="../assets/gmail.png" alt="gmail" title="Enviar E-mail" id="email">
                     <p>PetsHome@gmail.com</p>
                 </a>
             </div>
@@ -133,9 +133,9 @@ $result = $conn->query($sql);
         <div class="container flex4"></div>
     </footer>
 
-    <a href="#inicio" id="topo"><img src="assets/topo.png" alt="Topo do site"></a>
+    <a href="#inicio" id="topo"><img src="../assets/topo.png" alt="Topo do site"></a>
 
-    <script src="carrosel.js"></script>
+    <script src="../js/carrosel.js"></script>
 </body>
 </html>
 

@@ -3,41 +3,67 @@
 session_start();
 
 // Inclui o arquivo de conexão com o banco de dados
-include 'conexao.php'; 
+include 'conexao.php';
 
 // Verifica se o formulário foi enviado via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obtém os dados fornecidos pelo usuário no formulário
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $telefone = $_POST['telefone'];
-    $endereco = $_POST['endereco'];
+    // Verifica se os campos 'email' e 'senha' foram preenchidos
+    if (!empty($_POST['email']) && !empty($_POST['senha'])) {
+        // Obtém os dados fornecidos pelo usuário no formulário
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
-    // Prepara a consulta SQL para inserir os dados do novo usuário no banco de dados
-    $sql = "INSERT INTO institucional (nome, email, senha, telefone, endereco) VALUES (?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $nome, $email, $senha, $telefone, $endereco);
+        // Prepara a consulta SQL para buscar o usuário com o email fornecido
+        $sql = "SELECT * FROM institucional WHERE email = ?";
+        if ($stmt = $conn->prepare($sql)) {
+            // Faz o binding do parâmetro
+            $stmt->bind_param("s", $email);
 
-    // Executa a consulta SQL e verifica se a inserção foi bem-sucedida
-    if ($stmt->execute()) {
-        // Se bem-sucedido, armazena os dados do usuário na sessão
-        $_SESSION['usuario_id'] = $stmt->insert_id; // Armazena o ID do novo usuário
-        $_SESSION['nome'] = $nome;
-        $_SESSION['email'] = $email;
-        $_SESSION['telefone'] = $telefone;
-        $_SESSION['endereco'] = $endereco;
+            // Executa a consulta SQL
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-        // Redireciona para a página principal
-        header("Location: ../php/index.php");
-        exit();
+            // Verifica se um usuário foi encontrado
+            if ($result->num_rows === 1) {
+                // Obtém os dados do usuário
+                $usuario = $result->fetch_assoc();
+
+                // Verifica se a senha fornecida corresponde à senha armazenada (supondo que a senha esteja armazenada em texto simples; considere usar hash de senha para maior segurança)
+                if ($usuario['senha'] === $senha) {
+                    // Armazena os dados do usuário na sessão
+                    $_SESSION['usuario_id'] = $usuario['id'];
+                    $_SESSION['nome'] = $usuario['nome'];
+                    $_SESSION['email'] = $usuario['email'];
+                    $_SESSION['telefone'] = $usuario['telefone'];
+                    $_SESSION['endereco'] = $usuario['endereco'];
+
+                    // Redireciona para a página principal ou área restrita
+                    header("Location: ../html/patrocinador.html");
+                    exit();
+                } else {
+                    // Senha incorreta
+                    echo "Senha incorreta.";
+                }
+            } else {
+                // Usuário não encontrado
+                echo "Email não encontrado.";
+            }
+
+            // Fecha a declaração SQL
+            $stmt->close();
+        } else {
+            // Se houve um erro ao preparar a consulta
+            echo "Erro ao preparar a consulta: " . $conn->error;
+        }
+
+        // Fecha a conexão com o banco de dados
+        $conn->close();
     } else {
-        // Se houve um erro, exibe a mensagem de erro
-        echo "Erro ao cadastrar o usuário: " . $stmt->error;
+        // Se algum campo obrigatório não foi preenchido
+        echo "Todos os campos são obrigatórios.";
     }
-
-    // Fecha a declaração SQL e a conexão com o banco de dados
-    $stmt->close();
-    $conn->close();
+} else {
+    // Se o formulário não foi enviado via POST
+    echo "Método de requisição inválido.";
 }
 ?>

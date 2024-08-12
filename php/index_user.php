@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#adocao">Adoção e Compra</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><a href="usuario.php">Usuario</a></li>
+                    <li><a href="../php/usuario.php">Usuario</a></li>
                     <li><a href="../html/registerAnimal.html">Animal</a></li>
                 </ul>
             </nav>

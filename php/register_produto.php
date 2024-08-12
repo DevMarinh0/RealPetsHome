@@ -5,35 +5,27 @@ include 'conexao.php';
 // Verifica se o método de requisição é POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Obtém os dados do formulário
-    $nome_do_produto = $_POST['nome_do_produto'];
-    $descricao_do_produto = $_POST['descricao_do_produto'];
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
     $preco = isset($_POST['preco']) ? $_POST['preco'] : null;
 
     // Lida com o upload da foto
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
         $foto = $_FILES['foto']['name'];
         $foto_tmp = $_FILES['foto']['tmp_name'];
-        
-        // Validação básica do tipo de arquivo
-        $valid_types = ['image/jpeg', 'image/png', 'image/gif'];
-        if (in_array($_FILES['foto']['type'], $valid_types)) {
-            $foto_unique = uniqid() . '-' . basename($foto);
-            $foto_path = "uploads/$foto_unique";
-
-            // Move o arquivo para o diretório de uploads
-            if (!move_uploaded_file($foto_tmp, $foto_path)) {
-                die('Erro ao mover o arquivo para o diretório de uploads.');
-            }
-        } else {
-            die('Tipo de arquivo não permitido.');
+        // Define o diretório onde a foto será salva
+        $foto_path = "uploads/$foto";
+        // Move o arquivo para o diretório de uploads
+        if (!move_uploaded_file($foto_tmp, $foto_path)) {
+            die('Erro ao mover o arquivo para o diretório de uploads.');
         }
     } else {
         // Se não houver foto, define uma foto padrão
-        $foto_unique = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
+        $foto = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
     }
 
     // Prepara a consulta SQL para inserir os dados no banco
-    $sql = "INSERT INTO produtosPatrocinadores (nome_do_produto, descricao_do_produto, preco, foto) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO produtospatrocinadores (nome, descricao, preco, foto) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     
     if ($stmt === false) {
@@ -41,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Vincula os parâmetros à consulta
-    $stmt->bind_param("ssss", $nome_do_produto, $descricao_do_produto, $preco, $foto);
+    $stmt->bind_param("ssds", $nome, $descricao, $preco, $foto);
 
     // Executa a consulta
     if (!$stmt->execute()) {

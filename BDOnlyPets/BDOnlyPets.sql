@@ -43,11 +43,10 @@ CREATE TABLE patrocinadores (
 );
 CREATE TABLE produtosPatrocinadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_do_produto VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
-    descricao_do_produto TEXT
+    descricao TEXT
 );
-
 
 ALTER TABLE animais ADD COLUMN preco DECIMAL(10, 2);
 ALTER TABLE animais MODIFY COLUMN preco DECIMAL(10, 2) NULL;

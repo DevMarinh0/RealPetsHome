@@ -16,7 +16,7 @@ if ($result && $result->num_rows > 0) {
     // Caso não haja resultados, você pode definir valores padrão
     $patrocinador = [
         'nome' => 'Nome do Patrocinador',
-        'endereco' => 'Endereço Exemplo',
+        'localizacao' => 'Endereço Exemplo',
         'telefone' => '(00) 1234-5678',
         'email' => 'exemplo@patrocinador.com'
     ];
@@ -84,25 +84,7 @@ $conn->close();
             </div>
         </section>
 
-        <!-- Serviços -->
-        <section id="services">
-            <h2>Serviços</h2>
-            <div class="service-card">
-                <h3>Serviço 1</h3>
-                <p>Oferecemos consultoria especializada para ajudar nossos clientes a escolherem os melhores produtos
-                    para suas necessidades.</p>
-            </div>
-            <div class="service-card">
-                <h3>Serviço 2</h3>
-                <p>Nosso serviço de entrega é rápido e eficiente, garantindo que seus produtos cheguem em perfeito
-                    estado.</p>
-            </div>
-            <div class="service-card">
-                <h3>Serviço 3</h3>
-                <p>Disponibilizamos suporte técnico para auxiliar com qualquer dúvida ou problema relacionado aos nossos
-                    produtos.</p>
-            </div>
-        </section>
+        
     </main>
 </body>
 

@@ -1,42 +1,60 @@
 <?php
-// Incluir o arquivo de conexão
-include '../php/conexao.php';
+// Inclui o arquivo de conexão com o banco de dados
+include 'conexao.php';
 
-try {
-    // Consulta para buscar os dados do patrocinador
-    $stmt = $pdo->query("SELECT * FROM patrocinadores LIMIT 1"); // Pega apenas um patrocinador para o header
+// Inicializa uma variável para armazenar o patrocinador
+$patrocinador = [];
 
-    // Buscar o dado
-    $patrocinador = $stmt->fetch(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "Erro ao buscar dados: " . $e->getMessage();
-    exit();
+// Executa a consulta SQL para buscar um patrocinador
+$sql = "SELECT * FROM patrocinadores LIMIT 1";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    // Busca o primeiro registro da tabela
+    $patrocinador = $result->fetch_assoc();
+} else {
+    // Caso não haja resultados, você pode definir valores padrão
+    $patrocinador = [
+        'nome' => 'Nome do Patrocinador',
+        'endereco' => 'Endereço Exemplo',
+        'telefone' => '(00) 1234-5678',
+        'email' => 'exemplo@patrocinador.com'
+    ];
 }
-?>
 
+// Fecha a conexão
+$conn->close();
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/patrocinador.css" />
     <title>Patrocinador</title>
-    <link rel="stylesheet" href="../css/patrocinador.css">
+    <link rel="shortcut icon" href="../assets/Cat and dog-cuate 1.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <?php if ($patrocinador): ?>
-            <h1 id="sponsor-name"><?php echo htmlspecialchars($patrocinador['nome']); ?></h1>
-            <p id="location">Localização Física: <?php echo htmlspecialchars($patrocinador['localizacao']); ?></p>
-            <p id="phone">Telefone: <?php echo htmlspecialchars($patrocinador['telefone']); ?></p>
-            <p id="email">Email: <?php echo htmlspecialchars($patrocinador['email']); ?></p>
-        <?php else: ?>
-            <h1 id="sponsor-name">Nome do Patrocinador</h1>
-            <p id="location">Localização Física: Endereço Exemplo</p>
-            <p id="phone">Telefone: (00) 1234-5678</p>
-            <p id="email">Email: exemplo@patrocinador.com</p>
-        <?php endif; ?>
+        <div class="header-info">
+            <h1 id="sponsor-name">
+                <?php echo htmlspecialchars($patrocinador['nome']); ?>
+            </h1>
+            <p id="location">
+                <?php echo htmlspecialchars('Localização Física: ' . $patrocinador['localizacao']); ?>
+            </p>
+            <p id="phone">
+                <?php echo htmlspecialchars('Telefone: ' . $patrocinador['telefone']); ?>
+            </p>
+            <p id="email">
+                <?php echo htmlspecialchars('Email: ' . $patrocinador['email']); ?>
+            </p>
+        </div>
+        <div class="header-links">
+            <a href="../html/FormPatrocinador.html">Link para o Formulário</a>
+        </div>
     </header>
 
     <main>
@@ -69,17 +87,17 @@ try {
         <!-- Serviços -->
         <section id="services">
             <h2>Serviços</h2>
-            <div class="service">
+            <div class="service-card">
                 <h3>Serviço 1</h3>
                 <p>Oferecemos consultoria especializada para ajudar nossos clientes a escolherem os melhores produtos
                     para suas necessidades.</p>
             </div>
-            <div class="service">
+            <div class="service-card">
                 <h3>Serviço 2</h3>
                 <p>Nosso serviço de entrega é rápido e eficiente, garantindo que seus produtos cheguem em perfeito
                     estado.</p>
             </div>
-            <div class="service">
+            <div class="service-card">
                 <h3>Serviço 3</h3>
                 <p>Disponibilizamos suporte técnico para auxiliar com qualquer dúvida ou problema relacionado aos nossos
                     produtos.</p>

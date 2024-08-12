@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['endereco'] = $usuario['endereco'];
 
                     // Redireciona para a página principal ou área restrita
-                    header("Location: ../html/patrocinador.html");
+                    header("Location: ../php/patrocinador.php");
                     exit();
                 } else {
                     // Senha incorreta

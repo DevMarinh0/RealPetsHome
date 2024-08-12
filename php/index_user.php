@@ -29,7 +29,7 @@ $result = $conn->query($sql);
                 <input type="checkbox" id="check">
                 <label for="check">&#x268c;</label>
                 <ul>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="../html/login.html">Login</a></li>
                     <li><a href="#inicio">inicio</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#adocao">Adoção e Compra</a></li>

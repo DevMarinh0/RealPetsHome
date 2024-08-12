@@ -48,6 +48,19 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
     <link rel="stylesheet" href="../css/admin_dashboard.css">
+    <script>
+        // Função para confirmar salvamento
+        function confirmarSalvamento(event) {
+            if (!confirm("Tem certeza que deseja salvar as alterações?")) {
+                event.preventDefault(); // Cancela a ação se o usuário não confirmar
+            }
+        }
+
+        // Adiciona o evento ao carregar a página
+        window.onload = function() {
+            document.querySelector('.btn-edit').addEventListener('click', confirmarSalvamento);
+        }
+    </script>
 </head>
 <body>
     <h2>Editar Usuário</h2>
@@ -60,9 +73,8 @@ if (isset($_GET['id'])) {
         <input type="text" name="telefone" value="<?php echo htmlspecialchars($usuario['telefone']); ?>" required>
         <label>Endereço:</label>
         <input type="text" name="endereco" value="<?php echo htmlspecialchars($usuario['endereco']); ?>" required>
-        <input type="submit" value="Salvar">
+        <input type="submit" class="btn-edit" value="Salvar">
     </form>
     <a href="admin_dashboard.php">Voltar</a>
 </body>
 </html>
-

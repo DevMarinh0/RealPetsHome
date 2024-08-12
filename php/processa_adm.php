@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['is_admin'] = true; // Marca como administrador
         
         // Redireciona para o painel de administração
-        header("Location: ../´h´/admin_dashboard.php");
+        header("Location: ../php/admin_dashboard.php");
         exit();
     } else {
         // Nenhum administrador encontrado com as credenciais fornecidas

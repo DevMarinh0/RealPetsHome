@@ -17,8 +17,8 @@ if ($result->num_rows > 0) {
                 <td>{$row['telefone']}</td> <!-- Exibe o telefone do usuário -->
                 <td>{$row['endereco']}</td> <!-- Exibe o endereço do usuário -->
                 <td>
-                    <a href='editar_usuario.php?id={$row['id']}'>Editar</a> | 
-                    <a href='deletar_usuario.php?id={$row['id']}'>Deletar</a>
+                    <a href='editar_usuario.php?id={$row['id']}' class='btn-editt'>Editar</a> | 
+                    <a href='deletar_usuario.php?id={$row['id']}' class='btn-delete'>Deletar</a>
                 </td>
               </tr>";
     }

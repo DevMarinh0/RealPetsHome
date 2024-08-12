@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
                 <td>{$row['preco']}</td> 
                 <td>
                     <a href='editar_animal.php?id={$row['id']}'>Editar</a> | 
-                    <a href='deletar_animal.php?id={$row['id']}'>Deletar</a>
+                    <a href='deletar_animal.php?id={$row['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este animal?')\">Deletar</a>
                 </td>
               </tr>";
     }

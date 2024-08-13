@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
     // Verificamos se existe uma foto associada ao animal
     if ($foto) {
         // Se existir, tentamos excluir o arquivo da foto do diretório de uploads
-        unlink("uploads/" . $foto);
+        unlink("../uploads/" . $foto);
     }
 
     // Agora, preparamos a consulta para excluir o registro do animal do banco de dados

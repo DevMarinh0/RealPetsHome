@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
     <main class="container">
         <div class="animal-detail">
             <div class="image">
-                <img src="uploads/<?php echo $foto; ?>" alt="<?php echo $nome; ?>">
+                <img src="../uploads/<?php echo $foto; ?>" alt="<?php echo $nome; ?>">
             </div>
             <div class="info">
                 <h1><?php echo $nome; ?></h1>

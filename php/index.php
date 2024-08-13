@@ -83,7 +83,7 @@ $result = $conn->query($sql);
                                 echo '<a href="pet.php?id=' . $row["id"] . '">';
                                 // Exibe a foto do animal se existir, caso contrário, usa uma imagem padrão
                                 if ($row["foto"]) {
-                                    echo '<div class="image" style="background-image: url(\'uploads/' . $row["foto"] . '\');"></div>';
+                                    echo '<div class="image" style="background-image: url(\'./uploads/' . $row["foto"] . '\');"></div>';
                                 } else {
                                     echo '<div class="image" style="background-image: url(\'assets/default.jpg\');"></div>';
                                 }

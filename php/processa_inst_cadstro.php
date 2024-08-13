@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['endereco'] = $endereco;
 
         // Redireciona para a página principal
-        header("Location: ../php/index.php");
+        header("Location: ../php/patrocinador.php");
         exit();
     } else {
         // Se houve um erro, exibe a mensagem de erro

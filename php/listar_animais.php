@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
                 <td>{$row['idade']}</td> 
                 <td>{$row['descricao']}</td> 
                 <td>{$row['genero']}</td> 
-                <td><img src='uploads/{$row['foto']}' alt='Foto' style='width: 100px;'></td> <!-- Exibe a foto do animal com largura de 100px -->
+                <td><img src='../uploads/{$row['foto']}' alt='Foto' style='width: 100px;'></td> <!-- Exibe a foto do animal com largura de 100px -->
                 <td>{$row['opcao_compra']}</td> 
                 <td>{$row['preco']}</td> 
                 <td>

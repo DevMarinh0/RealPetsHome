@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $foto = $_FILES['foto']['name'];
         $foto_tmp = $_FILES['foto']['tmp_name'];
         // Define o diretório onde a foto será salva
-        $foto_path = "uploads/$foto";
+        $foto_path = "../uploads/$foto";
         // Move o arquivo para o diretório de uploads
         if (!move_uploaded_file($foto_tmp, $foto_path)) {
             die('Erro ao mover o arquivo para o diretório de uploads.');
         }
     } else {
         // Se não houver foto, define uma foto padrão
-        $foto = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
+        $foto = 'produto.jpg'; // Coloque o nome da sua foto padrão aqui
     }
 
     // Prepara a consulta SQL para inserir os dados no banco

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Obtém os dados do usuário
                 $usuario = $result->fetch_assoc();
 
-                // Verifica se a senha fornecida corresponde à senha armazenada (supondo que a senha esteja armazenada em texto simples; considere usar hash de senha para maior segurança)
+                // Verifica se a senha fornecida corresponde à senha armazenada (supondo que a senha esteja armazenada em texto simples.)
                 if ($usuario['senha'] === $senha) {
                     // Armazena os dados do usuário na sessão
                     $_SESSION['usuario_id'] = $usuario['id'];
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['telefone'] = $usuario['telefone'];
                     $_SESSION['endereco'] = $usuario['endereco'];
 
-                    // Redireciona para a página principal ou área restrita
+                    // Redireciona para a página Patrocinador
                     header("Location: ../php/patrocinador.php");
                     exit();
                 } else {

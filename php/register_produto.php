@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         // Se não houver foto, define uma foto padrão
-        $foto = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
+        $foto = 'produto.jpg'; // Coloque o nome da sua foto padrão aqui
     }
 
     // Prepara a consulta SQL para inserir os dados no banco

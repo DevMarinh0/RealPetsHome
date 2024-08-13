@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         move_uploaded_file($foto_tmp, $foto_path);
     } else {
         // Se não houver foto, define uma foto padrão
-        $foto = 'default.jpg'; // Coloque o nome da sua foto padrão aqui
+        $foto = 'animal.jpg'; // Coloque o nome da sua foto padrão aqui
     }
 
     // Prepara a consulta SQL para inserir os dados no banco

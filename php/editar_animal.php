@@ -117,7 +117,7 @@ if (isset($_GET['id'])) {
         <input type="number" step="0.01" name="preco" value="<?php echo htmlspecialchars($animal['preco']); ?>" required>
         <label>Foto:</label>
         <input type="file" name="foto">
-        <img src="uploads/<?php echo htmlspecialchars($animal['foto']); ?>" alt="Foto" style="width: 100px;">
+        <img src="../uploads/<?php echo htmlspecialchars($animal['foto']); ?>" alt="Foto" style="width: 100px;">
         <input type="submit" value="Salvar">
         <a href="admin_dashboard.php">Voltar</a>
     </form>

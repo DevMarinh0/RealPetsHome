@@ -8,7 +8,7 @@ include 'conexao.php';
 // Verifica se o usuário está autenticado, verificando se a variável de sessão 'usuario_id' está definida.
 // Se a variável não estiver definida, redireciona o usuário para a página de login.
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
+    header("Location: ../html/login.html");
     exit();
 }
 
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
     $telefone = $usuario['telefone'];
     $endereco = $usuario['endereco'];
 } else {
-    header("Location: ../htmllost.html");
+    header("Location: ../html/lost.html");
     exit();
 }
 

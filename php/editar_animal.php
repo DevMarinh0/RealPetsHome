@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Animal</title>
-    <link rel="stylesheet" href="../css/admin_dashboard.css">
+    <link rel="stylesheet" href="../css/editar_animal.css">
     <script>
         // Função para confirmar salvamento
         function confirmarSalvamento(event) {
@@ -93,8 +93,8 @@ if (isset($_GET['id'])) {
     </script>
 </head>
 <body>
-    <h2>Editar Animal</h2>
     <form action="" method="POST" enctype="multipart/form-data">
+        <h2>Editar Animal</h2>
         <label>Nome:</label>
         <input type="text" name="nome" value="<?php echo htmlspecialchars($animal['nome']); ?>" required>
         <label>Espécie:</label>
@@ -113,7 +113,7 @@ if (isset($_GET['id'])) {
         <input type="file" name="foto">
         <img src="uploads/<?php echo htmlspecialchars($animal['foto']); ?>" alt="Foto" style="width: 100px;">
         <input type="submit" value="Salvar">
+        <a href="admin_dashboard.php">Voltar</a>
     </form>
-    <a href="admin_dashboard.php">Voltar</a>
 </body>
 </html>

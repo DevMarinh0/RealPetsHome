@@ -48,7 +48,7 @@ $result = $conn->query($sql);
             <div id="textProj">
                 <h1>Projeto - PetsHome</h1>
                 <h2>Onde amor e cuidado se encontram!</h2>
-                <p>No Pets Home, prezamos pela transparência e segurança em todo o processo de adoção. Convidamos você a explorar nosso site, conhecer nossos animais disponíveis e se juntar a nós na missão de transformar vidas. No Pets Home, acreditamos que juntos podemos fazer a diferença.</p>
+                <p>No Pets Home, prezamos pela transparência e segurança em todo o processo de adoção. Convidamos você a explorar nosso site, conhecer nossos animais disponíveis e se juntar a nós na missão de transformar vidas. No Pets Home, acreditamos que juntos podemos fazer a diferença. </p>
             </div>
         </div>
     </main>
@@ -60,7 +60,8 @@ $result = $conn->query($sql);
                 <h2>Sobre nós</h2>
                 <p>Em 2024, nasceu o Pets Home, um site dedicado à adoção e castração de pets. Nosso objetivo é proporcionar lares amorosos e seguros para animais de todas as raças e tamanhos, promovendo a saúde através da castração responsável!<br><br>
                     Nosso site é fácil de usar e prioriza a qualidade. Cada animal listado passa por uma avaliação completa de saúde e comportamento, garantindo que os adotantes encontrem o companheiro ideal.<br><br>
-                    Além da adoção, incentivamos a castração como medida de controle populacional e prevenção de doenças. Trabalhamos com clínicas veterinárias e ONGs para oferecer serviços de castração a preços acessíveis.
+                    Além da adoção, incentivamos a castração como medida de controle populacional e prevenção de doenças. Trabalhamos com clínicas veterinárias e ONGs para oferecer serviços de castração a preços acessíveis.<br><br>
+                    No Pets Home, prezamos pela transparência e segurança em todo o processo de adoção. Convidamos você a explorar nosso site, conhecer nossos animais disponíveis e se juntar a nós na missão de transformar vidas. No Pets Home, acreditamos que juntos podemos fazer a diferença!
                 </p>
             </div>
         </div>

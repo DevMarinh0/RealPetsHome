@@ -26,8 +26,9 @@ if (isset($_GET['id'])) {
         // Verifica se uma nova foto foi enviada
         if ($_FILES['foto']['name']) {
             $foto = $_FILES['foto']['name'];
-            $target_dir = "uploads/";
+            $target_dir = "../uploads/";
             $target_file = $target_dir . basename($foto);
+        
             // Tenta mover o arquivo de foto enviado para o diretório de uploads
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_file)) {
                 // Se o upload for bem-sucedido, adiciona a parte da foto na consulta SQL
@@ -37,6 +38,9 @@ if (isset($_GET['id'])) {
                 echo "Erro ao mover o arquivo da foto.";
             }
         }
+        error_log("Nome do arquivo da foto: " . $foto);
+        error_log("Caminho completo do arquivo: " . $target_file);
+        
 
         // Prepara a consulta SQL para atualizar o animal no banco de dados
         $sql = "UPDATE animais SET nome=?, especie=?, idade=?, descricao=?, genero=?, opcao_compra=?, preco=? $foto_sql WHERE id=?";
@@ -44,8 +48,10 @@ if (isset($_GET['id'])) {
 
         // Se uma nova foto foi enviada, inclui o parâmetro da foto na consulta
         if ($foto_sql) {
-            $stmt->bind_param("ssissdis", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $foto, $id);
+            // Quando há uma nova foto
+            $stmt->bind_param("ssissdsi", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $foto, $id);
         } else {
+            // Quando não há uma nova foto
             $stmt->bind_param("ssissdii", $nome, $especie, $idade, $descricao, $genero, $opcao, $preco, $id);
         }
 

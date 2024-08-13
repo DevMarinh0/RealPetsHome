@@ -1,11 +1,16 @@
 <?php
 // Incluir o script de conexão
-include 'conexao.php';
+include 'conexao.php'; // Ajuste o caminho conforme necessário
 
 // Buscar produtos patrocinadores
-$sql = 'SELECT nome, preco, descricao, foto FROM produtospatrocinadores';
-$stmt = $pdo->query($sql);
-$produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$sql = 'SELECT nome, preco, descricao, foto FROM produtosPatrocinadores';
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die('Erro na consulta: ' . $conn->error);
+}
+
+$produtos = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +18,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos Patrocinadores</title>
-    <link rel="stylesheet" href="produto.css">
+    <link rel="stylesheet" href="../css/produto.css">
 </head>
 <body>
     <header>

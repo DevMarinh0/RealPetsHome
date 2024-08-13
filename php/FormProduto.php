@@ -1,6 +1,6 @@
 <?php
 // Incluir o script de conexão
-include '../caminho/para/conexao.php'; // Ajuste o caminho conforme necessário
+include 'conexao.php'; // Ajuste o caminho conforme necessário
 
 // Verificar se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
-    <link rel="stylesheet" href="adicionar_produto.css">
+    <link rel="stylesheet" href="../css/FormProduto.css">
 </head>
 <body>
     <header>

@@ -11,9 +11,13 @@ function scrollCarrossel(distance) {
     if (isScrolling) return;
     isScrolling = true;
 
+    // Verifica se o movimento vai além do limite esquerdo ou direito do carrossel
+    const maxScroll = carrossel.scrollWidth - carrossel.clientWidth;
+    scrollAmount = Math.max(0, Math.min(maxScroll, scrollAmount + distance));
+
     carrossel.scrollTo({
         top: 0,
-        left: scrollAmount += distance,
+        left: scrollAmount,
         behavior: 'smooth'
     });
 

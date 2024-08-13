@@ -18,6 +18,12 @@ if (isset($_GET['id'])) {
     $animal = $result->fetch_assoc();
     $stmt->close();
 
+    // Verifica se o animal foi encontrado
+    if (!$animal) {
+        echo "Animal não encontrado.";
+        exit();
+    }
+
     // Verifica se o formulário foi enviado (método POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Obtém os dados enviados pelo formulário
@@ -49,7 +55,7 @@ if (isset($_GET['id'])) {
         $stmt = $conn->prepare($sql);
 
         if ($foto_sql) {
-            $stmt->bind_param("ssissssi", $nome, $especie, $idade, $descricao, $genero, $opcao_compra, $preco, $foto, $id);
+            $stmt->bind_param("ssisssssi", $nome, $especie, $idade, $descricao, $genero, $opcao_compra, $preco, $foto, $id);
         } else {
             $stmt->bind_param("ssissssi", $nome, $especie, $idade, $descricao, $genero, $opcao_compra, $preco, $id);
         }
@@ -60,6 +66,8 @@ if (isset($_GET['id'])) {
         } else {
             echo "Erro: " . $stmt->error;
         }
+
+        $stmt->close();
     }
 } else {
     echo "ID do animal não foi passado na URL.";
@@ -95,18 +103,20 @@ if (isset($_GET['id'])) {
         <label>Espécie:</label>
         <input type="text" name="especie" value="<?php echo htmlspecialchars($animal['especie']); ?>" required>
         <label>Idade:</label>
-        <input type="text" name="idade" value="<?php echo htmlspecialchars($animal['idade']); ?>" required>
+        <input type="number" name="idade" value="<?php echo htmlspecialchars($animal['idade']); ?>" required>
         <label>Descrição:</label>
         <input type="text" name="descricao" value="<?php echo htmlspecialchars($animal['descricao']); ?>" required>
         <label>Gênero:</label>
         <input type="text" name="genero" value="<?php echo htmlspecialchars($animal['genero']); ?>" required>
         <label>Opção de Compra:</label>
-        <input type="text" name="opcao" value="<?php echo htmlspecialchars($animal['opcao_compra']); ?>" required>
+        <input type="text" name="opcao_compra" value="<?php echo htmlspecialchars($animal['opcao_compra']); ?>" required>
         <label>Preço:</label>
         <input type="number" step="0.01" name="preco" value="<?php echo htmlspecialchars($animal['preco']); ?>" required>
         <label>Foto:</label>
         <input type="file" name="foto">
-        <img src="../uploads/<?php echo htmlspecialchars($animal['foto']); ?>" alt="Foto" style="width: 100px;">
+        <?php if ($animal['foto']) { ?>
+            <img src="../uploads/<?php echo htmlspecialchars($animal['foto']); ?>" alt="Foto" style="width: 100px;">
+        <?php } ?>
         <input type="submit" value="Salvar">
         <a href="admin_dashboard.php">Voltar</a>
     </form>

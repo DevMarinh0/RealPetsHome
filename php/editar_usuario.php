@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="../css/admin_dashboard.css">
+    <link rel="stylesheet" href="../css/editar_usuario.css">
     <script>
         // Função para confirmar salvamento
         function confirmarSalvamento(event) {
@@ -63,8 +63,8 @@ if (isset($_GET['id'])) {
     </script>
 </head>
 <body>
-    <h2>Editar Usuário</h2>
     <form action="" method="POST">
+     <h2>Editar Usuário</h2>
         <label>Nome:</label>
         <input type="text" name="nome" value="<?php echo htmlspecialchars($usuario['nome']); ?>" required>
         <label>Email:</label>
@@ -74,7 +74,7 @@ if (isset($_GET['id'])) {
         <label>Endereço:</label>
         <input type="text" name="endereco" value="<?php echo htmlspecialchars($usuario['endereco']); ?>" required>
         <input type="submit" class="btn-edit" value="Salvar">
+        <a href="admin_dashboard.php">Voltar</a>
     </form>
-    <a href="admin_dashboard.php">Voltar</a>
 </body>
 </html>

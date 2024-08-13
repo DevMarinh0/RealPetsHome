@@ -76,7 +76,6 @@ form .campo-de-entrada span.detalhes {
 .dados-do-usuario .campo-de-entrada input:valid {
     border-color: #990000;
 }
-/* Estilo padrão para o input de arquivo */
 .dados-do-usuario .campo-de-entrada input[type="file"] {
     width: 100%;
     height: 45px;
@@ -91,11 +90,10 @@ form .campo-de-entrada span.detalhes {
     font-size: 16px;
 }
 
-/* Estilo do botão "Escolher arquivo" */
 .dados-do-usuario .campo-de-entrada input[type="file"]::file-selector-button {
     margin-right: 10px;
     border: none;
-    background-color: #990000; /* Cor vermelha para o botão */
+    background-color: #990000;
     color: white;
     border-radius: 5px;
     padding: 0 10px;
@@ -104,14 +102,12 @@ form .campo-de-entrada span.detalhes {
     transition: all 0.3s ease;
 }
 
-/* Efeito hover para o botão "Escolher arquivo" */
-.dados-do-usuario .campo-de-entrada input[type="file"]::file-selector-button:hover {
-    background-color: #d13621; /* Cor mais escura ao passar o mouse */
-}
-
-/* Efeito hover para o campo de arquivo */
 .dados-do-usuario .campo-de-entrada input[type="file"]:hover {
     background-color: #f0f0f0;
+}
+
+.dados-do-usuario .campo-de-entrada input[type="file"]::file-selector-button:hover {
+    background-color: #d13621;
 }
 
 form .detalhes-do-genero .titulo-genero {

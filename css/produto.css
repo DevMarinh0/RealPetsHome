@@ -1,0 +1,64 @@
+/* Estilo para a página de produtos */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b22222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.produtos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #b22222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #b22222;
+    margin: 10px 0;
+}
+
+p {
+    color: #555;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.preco {
+    color: #b22222;
+    font-size: 18px;
+    font-weight: bold;
+}

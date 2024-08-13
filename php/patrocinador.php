@@ -54,7 +54,7 @@ $conn->close();
         </div>
         <div class="header-links">
             <a href="../html/FormPatrocinador.html">Link para o Formulário</a>
-            <a href="../html/FormProdutosPatrocinador.html">Link para Adicionar os produtos</a>
+            <a href="../php/Produto.php">Link para Adicionar os produtos</a>
         </div>
     </header>
 

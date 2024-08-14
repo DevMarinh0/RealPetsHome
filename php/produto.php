@@ -3,7 +3,7 @@
 include 'conexao.php'; // Ajuste o caminho conforme necessário
 
 // Buscar produtos patrocinadores
-$sql = 'SELECT nome, preco, descricao, foto FROM produtosPatrocinadores';
+$sql = 'SELECT id, nome, preco, descricao, foto FROM produtosPatrocinadores';
 $result = $conn->query($sql);
 
 if ($result === false) {
@@ -27,12 +27,13 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
 
     <section class="produtos-container">
         <?php foreach ($produtos as $produto): ?>
-        <div class="card">
-            <img src="<?php echo htmlspecialchars($produto['foto']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
+        <a href="produto_detalhado.php?id=<?php echo htmlspecialchars($produto['id']); ?>" class="card">
+            <!-- Ajuste o caminho para a pasta uploadsPatrocinador -->
+            <img src="../uploadsPatrocinador/<?php echo htmlspecialchars($produto['foto']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
             <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
             <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
             <span class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></span>
-        </div>
+        </a>
         <?php endforeach; ?>
     </section>
 </body>

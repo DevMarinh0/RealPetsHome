@@ -1,0 +1,81 @@
+/* produto_detalhado.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b22222;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.produto-detalhe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.imagem img {
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.informacoes {
+    margin-left: 20px;
+}
+
+.informacoes h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #e74c3c;
+}
+
+.informacoes p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.informacoes p strong {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .produto-detalhe {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .informacoes {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .imagem img {
+        max-width: 100%;
+    }
+}

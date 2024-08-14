@@ -68,23 +68,6 @@ $conn->close();
             <p>Nossa missão é atender às necessidades dos nossos clientes com produtos de alta qualidade e um
                 atendimento excepcional.</p>
         </section>
-
-        <!-- Produtos -->
-        <section id="products">
-            <h2>Produtos</h2>
-            <div class="product">
-                <h3>Produto 1</h3>
-                <p>Descrição do Produto 1. Este produto é conhecido por sua alta qualidade e durabilidade.</p>
-            </div>
-            <div class="product">
-                <h3>Produto 2</h3>
-                <p>Descrição do Produto 2. Ideal para quem busca inovação e design moderno.</p>
-            </div>
-            <div class="product">
-                <h3>Produto 3</h3>
-                <p>Descrição do Produto 3. Uma escolha perfeita para o dia a dia.</p>
-            </div>
-        </section>
     </main>
 </body>
 

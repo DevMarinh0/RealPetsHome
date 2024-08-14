@@ -70,6 +70,7 @@ $result = $conn->query($sql);
     <!-- Seção de Adoção -->
     <section id="adocao">
         <div class="container">
+            <h2>Adoção e Compra</h2>
             <div class="carousel">
                 <button class="carousel-btn prev" id="prevBtn">&#x276E;</button>
                 <div class="carousel-wrapper" id="carrossel">
@@ -104,7 +105,49 @@ $result = $conn->query($sql);
             </div>
         </div>
     </section>
-
+<!-- Seção de Produtos Patrocinadores -->
+<section id="produtos">
+    <div class="container">
+        <h2>Produtos e serviços</h2>
+        <div class="carousel">
+            <button class="carousel-btn prev" id="prevBtnProdutos">&#x276E;</button>
+            <div class="carousel-wrapper" id="carrosselProdutos">
+                <div class="Card">
+                    <?php
+                    // Executa uma consulta para buscar id, nome, descrição e foto dos produtos patrocinadores
+                    $sql_produtos = "SELECT id, nome, preco, descricao, foto FROM produtosPatrocinadores";
+                    $result_produtos = $conn->query($sql_produtos);
+                    
+                    // Verifica se há resultados na consulta
+                    if ($result_produtos->num_rows > 0) {
+                        // Loop através dos resultados e exibe cada produto
+                        while ($row_produto = $result_produtos->fetch_assoc()) {
+                            echo '<div class="cards">';
+                            // Adiciona um link ao redor do card
+                            echo '<a href="produto.php?id=' . $row_produto["id"] . '">';
+                            // Exibe a foto do produto se existir, caso contrário, usa uma imagem padrão
+                            if ($row_produto["foto"]) {
+                                echo '<div class="image" style="background-image: url(\'../uploadsPatrocinador/' . $row_produto["foto"] . '\');"></div>';
+                            } else {
+                                echo '<div class="image" style="background-image: url(\'assets/default.jpg\');"></div>';
+                            }
+                            echo '<h3>' . $row_produto["nome"] . '</h3>';
+                            echo '<p>' . $row_produto["descricao"] . '</p>';
+                            echo '<p>Preço: R$' . number_format($row_produto["preco"], 2, ',', '.') . '</p>';
+                            echo '</a>';
+                            echo '</div>';
+                        }
+                    } else {
+                        // Mensagem exibida se nenhum produto for encontrado
+                        echo "Nenhum produto encontrado.";
+                    }
+                    ?>
+                </div>
+            </div>
+            <button class="carousel-btn next" id="nextBtnProdutos">&#x276F;</button>
+        </div>
+    </div>
+</section>
     <!-- Rodapé -->
     <address>
         <div class="container flex5">

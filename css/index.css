@@ -1,4 +1,4 @@
-/* Importação ( Google Fonts) */
+/* Importação (Google Fonts) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 /* RESET */
@@ -115,7 +115,7 @@ nav ul li a {
 /* Destaque */
 #inicio {
     height: 45vh;
-    padding: 50px 0px;
+    padding: 50px 0;
     background-color: #e7e4e4;
     background-attachment: fixed;
     background-size: cover;
@@ -128,14 +128,10 @@ nav ul li a {
 
 #textProj {
     color: #3693e3;
-    padding: 0px 15px;
+    padding: 0 15px;
 }
 
-#textProj h1 {
-    margin-bottom: 15px;
-}
-
-#textProj h2 {
+#textProj h1, #textProj h2 {
     margin-bottom: 15px;
 }
 
@@ -155,26 +151,28 @@ nav ul li a {
 }
 
 #video iframe {
-    width: 340px;
-    height: 191px;
+    width: 100%;
+    height: auto;
+    max-width: 560px;
+    max-height: 315px;
     border: 0;
 }
 
-/* Adoção */
-.carousel {
+/* Carrosséis */
+.carousel, .carousel-produtos {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.carousel-wrapper {
+.carousel-wrapper, .carousel-produtos-wrapper {
     display: flex;
     overflow: hidden;
     width: 100%;
 }
 
-.cards {
+.cards, .cards-produtos {
     min-width: 300px;
     margin: 10px;
     background-color: white;
@@ -184,14 +182,14 @@ nav ul li a {
     text-align: center;
 }
 
-.image {
+.image, .image-produto {
     width: 100%;
     height: 200px;
     background-size: cover;
     background-position: center;
 }
 
-.carousel-btn {
+.carousel-btn, .carousel-btn-produto {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -210,11 +208,11 @@ nav ul li a {
     align-items: center;
 }
 
-.prev {
+.prev, .prev-produto {
     left: -55px;
 }
 
-.next {
+.next, .next-produto {
     right: -35px;
 }
 
@@ -238,11 +236,7 @@ address img {
     height: 48px;
 }
 
-#IconLocal {
-    display: none;
-}
-
-#maps {
+#IconLocal, #maps {
     display: none;
 }
 
@@ -267,72 +261,43 @@ footer {
     color: white;
 }
 
-/* Smartphone LandScape */
+/* Responsividade */
 @media (min-width: 576px) {
-    /* Layout */
     .container {
         max-width: 540px;
     }
 
-    /* Sobre */
     #video iframe {
-        width: 560px;
-        height: 315px;
-    }
-
-    /* Rodapé */
-    .flex4 {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
         width: 100%;
+        max-width: 560px;
+        max-height: 315px;
     }
 
-    #social {
-        margin: 0;
-    }
-
-    .cards {
+    .cards, .cards-produtos {
         width: 70%;
     }
 }
 
-/* Tablet Portrait */
 @media (min-width: 768px) {
-    /* Layout */
     .container {
         max-width: 720px;
     }
 
-    /* Sobre */
-    #video iframe {
-        width: 560px;
-        height: 315px;
-    }
-
-    .cards {
+    .cards, .cards-produtos {
         width: 60%;
     }
 }
 
-/* Tablet LandScape */
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
     }
 
-    /* Sobre */
-    #video iframe {
-        width: 560px;
-        height: 315px;
-    }
-
-    .cards {
+    .cards, .cards-produtos {
         width: 50%;
     }
 }
 
-/* PC */
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
@@ -343,7 +308,7 @@ footer {
     }
 
     #logo {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     #logo img {
@@ -379,7 +344,6 @@ footer {
         transition: all 0.4s;
     }
 
-    /* Destaque */
     #destaqProj {
         display: inline;
     }
@@ -394,10 +358,10 @@ footer {
         margin-left: 70px;
     }
 
-    /* Sobre */
     #video iframe {
-        width: 560px;
-        height: 315px;
+        width: 100%;
+        max-width: 560px;
+        max-height: 315px;
     }
 
     #textoSobre {
@@ -409,12 +373,10 @@ footer {
         align-items: center;
     }
 
-    /* Adoção */
-    .cards {
+    .cards, .cards-produtos {
         width: 33%;
     }
 
-    /* Rodapé */
     .flex5 {
         flex-direction: row;
     }

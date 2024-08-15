@@ -63,7 +63,10 @@ show tables;
 -- Inserindo dados na tabela produtosPatrocinadores
 INSERT INTO produtosPatrocinadores (nome, preco, descricao, foto) VALUES 
 ('Ração Premium', 120.00, 'Ração Premium para cães adultos, 10kg', 'foto_racao_premium.jpg'),
-('Brinquedo para Gato', 25.50, 'Brinquedo interativo para gatos', 'foto_brinquedo_gato.jpg');
+('Brinquedo para Gato', 25.50, 'Brinquedo interativo para gatos', 'foto_brinquedo_gato.jpg'),
+('Coleira Ajustável', 45.00, 'Coleira ajustável para cães de médio porte.', 'foto_coleira.jpg'),
+('Caminha para Gato', 80.00, 'Caminha confortável para gatos.', 'foto_caminha_gato.jpg'),
+('Ração para Filhotes', 60.00, 'Ração específica para filhotes de cães, 5kg.', 'foto_racao_filhotes.jpg');
 
 -- Inserindo dados na tabela institucional
 INSERT INTO institucional (nome, email, senha, telefone, endereco) VALUES 
@@ -73,17 +76,24 @@ INSERT INTO institucional (nome, email, senha, telefone, endereco) VALUES
 -- Inserindo dados na tabela animais
 INSERT INTO animais (nome, especie, idade, descricao, genero, preco, foto, opcao_compra) VALUES 
 ('Rex', 'Cachorro', 2, 'Cachorro de grande porte, amigável e brincalhão.', 'Masculino', 300.00, 'foto_rex.jpg', 'comprar'),
-('Mimi', 'Gato', 2, 'Gata pequena, carinhosa e sociável.', 'Feminino', NULL, 'foto_mimi.jpg', 'adotar');
+('Mimi', 'Gato', 2, 'Gata pequena, carinhosa e sociável.', 'Feminino', NULL, 'foto_mimi.jpg', 'adotar'),
+('Luna', 'Gato', 1, 'Gata brincalhona e cheia de energia.', 'Feminino', 200.00, 'foto_luna.jpg', 'comprar'),
+('Thor', 'Cachorro', 3, 'Cachorro forte e protetor, ideal para guarda.', 'Masculino', NULL, 'foto_thor.jpg', 'adotar'),
+('Bella', 'Cachorro', 4, 'Cachorra de porte médio, dócil e amigável.', 'Feminino', 150.00, 'foto_bella.jpg', 'comprar');
 
 -- Inserindo dados na tabela usuarios
 INSERT INTO usuarios (id, nome, email, senha, telefone, endereco) VALUES 
-(1, 'João Silva', 'joao.silva@example.com', 'senhaJoao123', '11987654321', 'Rua das Flores, 123'),
-(2, 'Maria Oliveira', 'maria.oliveira@example.com', 'senhaMaria456', '21987654321', 'Av. Central, 456');
+(1, 'João Silva', 'joao.silva@exemplo.com', 'senhaJoao123', '11987654321', 'Rua das Flores, 123'),
+(2, 'Maria Oliveira', 'maria.oliveira@exemplo.com', 'senhaMaria456', '21987654321', 'Av. Central, 456');
 
 ALTER TABLE animais ADD COLUMN usuario_id INT;
 
 UPDATE animais SET usuario_id = 1 WHERE id = 1;  
-UPDATE animais SET usuario_id = 2 WHERE id = 2;  
+UPDATE animais SET usuario_id = 2 WHERE id = 2; 
+UPDATE animais SET usuario_id = 3 WHERE id = 3;
+UPDATE animais SET usuario_id = 4 WHERE id = 4;
+UPDATE animais SET usuario_id = 5 WHERE id = 5;  
+
 SELECT * FROM animais;
 SELECT * FROM usuarios;
 

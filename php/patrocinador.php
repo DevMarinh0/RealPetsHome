@@ -4,6 +4,10 @@ include 'conexao.php';
 
 // Inicializa uma variável para armazenar o patrocinador
 $patrocinador = [];
+// Buscar produtos patrocinadores
+$sql = 'SELECT id, nome, preco, descricao, foto FROM produtosPatrocinadores';
+$result = $conn->query($sql);
+$produtos = $result->fetch_all(MYSQLI_ASSOC);
 
 // Executa a consulta SQL para buscar um patrocinador
 $sql = "SELECT * FROM patrocinadores LIMIT 1";
@@ -68,6 +72,18 @@ $conn->close();
             <p>Nossa missão é atender às necessidades dos nossos clientes com produtos de alta qualidade e um
                 atendimento excepcional.</p>
         </section>
+        
+    <section class="produtos-container">
+        <?php foreach ($produtos as $produto): ?>
+        <a href="produto_detalhado.php?id=<?php echo htmlspecialchars($produto['id']); ?>" class="card">
+            <!-- Ajuste o caminho para a pasta uploadsPatrocinador -->
+            <img src="../uploadsPatrocinador/<?php echo htmlspecialchars($produto['foto']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
+            <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
+            <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
+            <span class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></span>
+        </a>
+        <?php endforeach; ?>
+    </section>
     </main>
 </body>
 

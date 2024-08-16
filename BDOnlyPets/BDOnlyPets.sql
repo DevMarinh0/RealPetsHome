@@ -84,7 +84,10 @@ INSERT INTO animais (nome, especie, idade, descricao, genero, preco, foto, opcao
 -- Inserindo dados na tabela usuarios
 INSERT INTO usuarios (id, nome, email, senha, telefone, endereco) VALUES 
 (1, 'João Silva', 'joao.silva@exemplo.com', 'senhaJoao123', '11987654321', 'Rua das Flores, 123'),
-(2, 'Maria Oliveira', 'maria.oliveira@exemplo.com', 'senhaMaria456', '21987654321', 'Av. Central, 456');
+(2, 'Maria Oliveira', 'maria.oliveira@exemplo.com', 'senhaMaria456', '21987654321', 'Av. Central, 456'),
+(3.'Carlos Souza', 'carlos.souza@exemplo.com', 'senhaCarlos789', '31987654321', 'Rua das Acácias, 789'),
+(4,'Ana Pereira', 'ana.pereira@exemplo.com', 'senhaAna123', '41987654321', 'Av. das Palmeiras, 321'),
+(5,'Lucas Almeida', 'lucas.almeida@exemplo.com', 'senhaLucas456', '51987654321', 'Rua das Orquídeas, 654');
 
 ALTER TABLE animais ADD COLUMN usuario_id INT;
 
@@ -93,6 +96,7 @@ UPDATE animais SET usuario_id = 2 WHERE id = 2;
 UPDATE animais SET usuario_id = 3 WHERE id = 3;
 UPDATE animais SET usuario_id = 4 WHERE id = 4;
 UPDATE animais SET usuario_id = 5 WHERE id = 5;  
+ 
 
 SELECT * FROM animais;
 SELECT * FROM usuarios;

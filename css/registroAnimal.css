@@ -106,7 +106,7 @@ form .campo-de-entrada span.detalhes {
 
 /* Efeito hover para o botão "Escolher arquivo" */
 .dados-do-usuario .campo-de-entrada input[type="file"]::file-selector-button:hover {
-    background-color: #d13621; /* Cor mais escura ao passar o mouse */
+    background-color: #d13621; 
 }
 
 /* Efeito hover para o campo de arquivo */

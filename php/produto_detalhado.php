@@ -6,11 +6,8 @@ include 'conexao.php';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
-    // Buscar os detalhes do produto e o telefone do institucional pelo ID
-    $sql = "SELECT p.*, i.telefone AS institucional_telefone
-            FROM produtosPatrocinadores p
-            LEFT JOIN institucional i ON i.id = (SELECT institucional_id FROM produtosPatrocinadores WHERE id = p.id)
-            WHERE p.id = ?";
+    // Buscar os detalhes do produto pelo ID
+    $sql = "SELECT * FROM produtosPatrocinadores WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     $stmt->execute();
@@ -50,8 +47,6 @@ if (isset($_GET['id'])) {
             <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
             <p><strong>Descrição:</strong> <?php echo htmlspecialchars($produto['descricao']); ?></p>
             <p><strong>Preço:</strong> R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
-            <p><strong>Telefone do Institucional:</strong> <?php echo htmlspecialchars($produto['institucional_telefone']); ?></p>
-            <a href="https://wa.me/<?php echo urlencode(preg_replace('/[^0-9]/', '', $produto['institucional_telefone'])); ?>" target="_blank">Entre em contato via WhatsApp</a>
         </div>
     </div>
 </body>

@@ -89,6 +89,12 @@ INSERT INTO usuarios (id, nome, email, senha, telefone, endereco) VALUES
 (4,'Ana Pereira', 'ana.pereira@exemplo.com', 'senhaAna123', '41987654321', 'Av. das Palmeiras, 321'),
 (5,'Lucas Almeida', 'lucas.almeida@exemplo.com', 'senhaLucas456', '51987654321', 'Rua das Orquídeas, 654');
 
+-- Inserindo dados na tabela patrocinadores
+INSERT INTO patrocinadores (nome, email, telefone, localizacao) VALUES 
+('PetShop A', 'contato@petshopa.com', '11987654321', 'Rua das Flores, 123'),
+('Loja B', 'atendimento@lojab.com', '21987654322', 'Av. Central, 456'),
+('Clínica C', 'info@clinicac.com', '31987654323', 'Praça da República, 789');
+
 ALTER TABLE animais ADD COLUMN usuario_id INT;
 
 UPDATE animais SET usuario_id = 1 WHERE id = 1;  

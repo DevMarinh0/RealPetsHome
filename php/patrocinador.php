@@ -72,19 +72,23 @@ $conn->close();
             <p>Nossa missão é atender às necessidades dos nossos clientes com produtos de alta qualidade e um
                 atendimento excepcional.</p>
         </section>
-        
-    <section class="produtos-container">
+    <!-- Seção de Produtos -->
+    <h2>Produtos</h2>
+    <div class="produtos-wrapper">
         <?php foreach ($produtos as $produto): ?>
-        <a href="produto_detalhado.php?id=<?php echo htmlspecialchars($produto['id']); ?>" class="card">
-            <!-- Ajuste o caminho para a pasta uploadsPatrocinador -->
-            <img src="../uploadsPatrocinador/<?php echo htmlspecialchars($produto['foto']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
-            <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
-            <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
-            <span class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></span>
-        </a>
+        <div class="produtos-container">
+            <a href="produto_detalhado.php?id=<?php echo htmlspecialchars($produto['id']); ?>" class="card">
+                <!-- Ajuste o caminho para a pasta uploadsPatrocinador -->
+                <img src="../uploadsPatrocinador/<?php echo htmlspecialchars($produto['foto']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
+                <h3><?php echo htmlspecialchars($produto['nome']); ?></h3>
+                <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
+                <span class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></span>
+            </a>
+        </div>
         <?php endforeach; ?>
-    </section>
-    </main>
+    </div>
+</main>
+
 </body>
 
 </html>

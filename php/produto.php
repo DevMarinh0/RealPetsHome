@@ -22,7 +22,7 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
 </head>
 <body>
     <header>
-        <h1>Nosso Catálogo de Produtos Patrocinadores</h1>
+        <h1>Nosso Catálogo de Produtos Dos Patrocinadores</h1>
     </header>
 
     <section class="produtos-container">

@@ -1,3 +1,4 @@
+/* Estilos gerais permanecem os mesmos */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -7,7 +8,7 @@ body {
 
 .barra-lateral {
     width: 250px;
-    background-color: #c62828; 
+    background-color: #c62828;
     color: white;
     padding: 20px;
     height: 100vh;
@@ -70,4 +71,64 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+    }
+
+    .barra-lateral {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .barra-lateral ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .barra-lateral ul li {
+        margin: 0;
+    }
+
+    .conteudo-principal {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    th, td {
+        word-break: break-word;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .barra-lateral {
+        padding: 5px;
+    }
+
+    .barra-lateral ul li a {
+        font-size: 14px;
+    }
+
+    .conteudo-principal {
+        padding: 5px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 3px;
+    }
 }

@@ -188,3 +188,13 @@ form .botao input:hover {
         flex-direction: column;
     }
 }
+buttonc {
+    background-color: #ad3434;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: large;
+    cursor: pointer;
+}

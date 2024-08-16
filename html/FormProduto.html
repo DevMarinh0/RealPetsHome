@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/FormProduto.css">
 </head>
 <body>
+    <script>document.getElementById('btn11').addEventListener('click', function(){
+        window.location.href = '../php/patrocinador.php';
+    })</script>
     <header>
         <h1>Adicionar Novo Produto</h1>
     </header>
@@ -26,7 +29,10 @@
             <input type="file" id="foto" name="foto" accept="image/*" required>
 
             <button type="submit">Adicionar Produto</button>
+            <button type="submit" id="btn11">Cancelar</button>
+
         </form>
+        
     </section>
 </body>
 </html>
